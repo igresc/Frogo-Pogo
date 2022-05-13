@@ -6,7 +6,7 @@ public class Timer : MonoBehaviour
 	[SerializeField] private Text timeText;
 
 	[SerializeField] private float timeValue = 90;
-	[SerializeField] private const float parryAddedTime = 5;
+	[SerializeField] private const float parryAddedTime = 5; //Same time to add or to sustract
 
 	Color defaultColor;
 	// Update is called once per frame
@@ -52,4 +52,8 @@ public class Timer : MonoBehaviour
 		timeValue += parryAddedTime;
 	}
 
+	public void	RemoveParryTime()
+	{
+		timeValue -= parryAddedTime;
+	}
 }

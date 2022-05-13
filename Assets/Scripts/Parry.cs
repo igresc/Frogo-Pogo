@@ -4,6 +4,7 @@ public class Parry : MonoBehaviour
 {
 	public CharacterController2D controller;
 	public Timer timer;
+	public TrophyLogic score;
 
 	public float slowDownTime = 0.3f;
 	public Vector2 parrySpeed;
@@ -74,6 +75,16 @@ public class Parry : MonoBehaviour
 		ExitParryMode();
 	}
 
+	void OnCollisionEnter2D(Collision2D collision)
+    {
+		Debug.Log(collision);
+		if (collision.gameObject.CompareTag("Parryable"))
+        {
+			score.RemoveScore();
+			timer.RemoveParryTime();
+		}
+    }
+
 	public void ParryMode()
 	{
 		if(isParryMode)
@@ -97,7 +108,7 @@ public class Parry : MonoBehaviour
 		{
 			ExitParryMode();
 		}
-		Debug.Log(parryTime);
+		//Debug.Log(parryTime);
 	}
 
 	void ParryAction()
@@ -105,6 +116,7 @@ public class Parry : MonoBehaviour
 		if (isParryMode)
 		{
 			timer.AddParryTime();
+			score.AddScore();
 		}
 
 		isParryMode = false;
