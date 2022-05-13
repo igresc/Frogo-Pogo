@@ -17,7 +17,7 @@ public class MoscoAI : MonoBehaviour
 
 	void Update()
 	{
-		if (movingTime <= 0)
+		if(movingTime <= 0)
 		{
 			number.x = Random.Range(-20, 20);
 			number.y = Random.Range(-10, 10);
@@ -25,7 +25,7 @@ public class MoscoAI : MonoBehaviour
 		}
 		else movingTime -= Time.deltaTime;
 
-		if (Vector2.Distance(player.transform.position, transform.position) <= lineOfSight)
+		if(Vector2.Distance(player.transform.position, transform.position) <= lineOfSight)
 		{
 			isChasing = true;
 		}
@@ -34,9 +34,9 @@ public class MoscoAI : MonoBehaviour
 			isChasing = false;
 		}
 
-		if (player == null)
+		if(player == null)
 			return;
-		if (isChasing) { ChasePlayer(); }
+		if(isChasing) { ChasePlayer(); }
 		else
 			Patroling();
 
@@ -53,7 +53,7 @@ public class MoscoAI : MonoBehaviour
 	}
 	private void Flip()
 	{
-		if (transform.position.x > player.transform.position.x)
+		if(transform.position.x > player.transform.position.x)
 		{
 			transform.rotation = Quaternion.Euler(0, 0, 0);
 		}

@@ -26,7 +26,7 @@ namespace TMPro.Examples
 			TMP_FontAsset fontAsset = null;
 
 			// Create Dynamic Font Asset for the given font file.
-			switch (Benchmark)
+			switch(Benchmark)
 			{
 				case BenchmarkType.TMP_SDF_MOBILE:
 					fontAsset = TMP_FontAsset.CreateFontAsset(SourceFont, 90, 9, GlyphRenderMode.SDFAA, 256, 256, AtlasPopulationMode.Dynamic);
@@ -44,9 +44,9 @@ namespace TMPro.Examples
 					break;
 			}
 
-			for (int i = 0; i < NumberOfSamples; i++)
+			for(int i = 0; i < NumberOfSamples; i++)
 			{
-				switch (Benchmark)
+				switch(Benchmark)
 				{
 					case BenchmarkType.TMP_SDF_MOBILE:
 					case BenchmarkType.TMP_SDF__MOBILE_SSD:
@@ -63,7 +63,7 @@ namespace TMPro.Examples
 							textComponent.alignment = TextAlignmentOptions.Center;
 							textComponent.color = new Color32(255, 255, 0, 255);
 
-							if (Benchmark == BenchmarkType.TMP_BITMAP_MOBILE)
+							if(Benchmark == BenchmarkType.TMP_BITMAP_MOBILE)
 								textComponent.fontSize = 132;
 
 						}
