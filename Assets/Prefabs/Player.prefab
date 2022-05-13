@@ -72,7 +72,6 @@ GameObject:
   - component: {fileID: 6090950922951280648}
   - component: {fileID: 7872243354737018161}
   - component: {fileID: 8534177526079317929}
-  - component: {fileID: 4219151717583256178}
   - component: {fileID: 4711397461153816431}
   - component: {fileID: 5780632803445007211}
   - component: {fileID: 6681572987499384054}
@@ -185,7 +184,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.20968616}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -196,24 +195,8 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.5806277}
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!58 &4219151717583256178
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4530205548938474858}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.0066945553, y: -0.02}
-  serializedVersion: 2
-  m_Radius: 0.49370217
 --- !u!58 &4711397461153816431
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -229,7 +212,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.74
+  m_Radius: 0.8
 --- !u!114 &5780632803445007211
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -242,7 +225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0df953cb8b699ea418cd8f5991d3cc35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_JumpForce: 18
+  m_JumpForce: 20
   m_MovementSmoothing: 0.05
   m_AirControl: 1
   m_WhatIsGround:
@@ -286,9 +269,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 5780632803445007211}
   timer: {fileID: 0}
-  enemyLayer:
-    serializedVersion: 2
-    m_Bits: 0
+  score: {fileID: 0}
+  enemyCollision: {fileID: 0}
   slowDownTime: 0.1
   parrySpeed: {x: 0, y: 30}
   startParryDashTime: 0.1
@@ -296,3 +278,4 @@ MonoBehaviour:
   isParryMode: 0
   isParryDash: 0
   startParryTime: 0
+  midParryTime: 0
