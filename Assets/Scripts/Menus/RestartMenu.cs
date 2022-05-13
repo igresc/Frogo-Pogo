@@ -6,7 +6,7 @@ public class RestartMenu : MonoBehaviour
 	public GameObject restartMenuUi;
 	private void Update()
 	{
-		if (Input.GetKeyDown(KeyCode.K))
+		if(Input.GetKeyDown(KeyCode.K))
 		{
 			Time.timeScale = 0f;
 			restartMenuUi.SetActive(true);

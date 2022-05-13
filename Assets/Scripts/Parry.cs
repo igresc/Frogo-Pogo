@@ -4,7 +4,6 @@ public class Parry : MonoBehaviour
 {
 	public CharacterController2D controller;
 	public Timer timer;
-	public LayerMask enemyLayer;
 
 	public float slowDownTime = 0.3f;
 	public Vector2 parrySpeed;
@@ -16,16 +15,19 @@ public class Parry : MonoBehaviour
 	public bool isParryDash;
 
 	public float startParryTime;
+	public float midParryTime;
 	private float parryTime;
 
 	private float defaultTimeFixedValue;
 	private Rigidbody2D rb;
+
 	// Start is called before the first frame update
 	void Start()
 	{
 		defaultTimeFixedValue = Time.fixedDeltaTime;
 		rb = GetComponent<Rigidbody2D>();
 		parryDashTime = startParryDashTime;
+		parryTime = startParryTime;
 	}
 
 	private void Update()
@@ -35,8 +37,12 @@ public class Parry : MonoBehaviour
 			isParryDash = true;
 			ParryAction();
 		}
-
+		else
+		{
+			ParryMode();
+		}
 	}
+
 
 	void OnTriggerEnter2D(Collider2D collision)
 	{
@@ -57,6 +63,7 @@ public class Parry : MonoBehaviour
 		//else
 		if(collision.CompareTag("Parryable"))
 		{
+			isParryMode = true;
 			ParryMode();
 		}
 	}
@@ -64,18 +71,33 @@ public class Parry : MonoBehaviour
 	private void OnTriggerExit2D(Collider2D collision)
 	{
 		isParryMode = false;
-		Time.timeScale = 1f;
-		Time.fixedDeltaTime = defaultTimeFixedValue;
+		ExitParryMode();
 	}
 
 	public void ParryMode()
 	{
-		Time.timeScale = slowDownTime;
-		Time.fixedDeltaTime = Time.timeScale * .02f;
-		isParryMode = true;
-		//parryTime = startParryTime;
+		if(isParryMode)
+		{
+			Time.timeScale = slowDownTime;
+			Time.fixedDeltaTime = Time.timeScale * .02f;
 
-		//ParryAction();
+			if(parryTime <= 0)
+			{
+				isParryMode = false;
+				parryTime = startParryTime;
+			}
+			else if(parryTime <= midParryTime && parryTime > 0)
+			{
+				Time.timeScale = 0.0000001f;
+				Time.fixedDeltaTime = Time.timeScale * .02f;
+			}
+			parryTime -= Time.fixedUnscaledDeltaTime;
+		}
+		else
+		{
+			ExitParryMode();
+		}
+		Debug.Log(parryTime);
 	}
 
 	void ParryAction()
@@ -86,8 +108,7 @@ public class Parry : MonoBehaviour
 		}
 
 		isParryMode = false;
-		Time.timeScale = 1f;
-		Time.fixedDeltaTime = defaultTimeFixedValue;
+		ExitParryMode();
 
 		if(parryDashTime <= 0)
 		{
@@ -99,7 +120,15 @@ public class Parry : MonoBehaviour
 		{
 			//Debug.Log(parryDashTime);
 			parryDashTime -= Time.deltaTime;
+			rb.velocity = Vector2.zero;
 			rb.velocity = Vector2.up * parrySpeed;
 		}
+	}
+
+	void ExitParryMode()
+	{
+		parryTime = startParryTime;
+		Time.timeScale = 1f;
+		Time.fixedDeltaTime = defaultTimeFixedValue;
 	}
 }
