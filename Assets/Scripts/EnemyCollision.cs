@@ -9,14 +9,14 @@ public class EnemyCollision : MonoBehaviour
 	void OnCollisionEnter2D(Collision2D collision)
 	{
 		//Debug.Log(collision);
-		if (collision.gameObject.CompareTag("Enemy"))
+		if(collision.gameObject.CompareTag("Enemy"))
 		{
 			parry.FailedlParry();
 		}
 	}
 
 	public void KillEnemy(GameObject enemy)
-    {
+	{
 		Destroy(enemy);
 	}
 

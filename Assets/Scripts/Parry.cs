@@ -36,7 +36,7 @@ public class Parry : MonoBehaviour
 
 	private void Update()
 	{
-		if ((isParryMode && Input.GetKeyDown(KeyCode.Space)) || isParryDash)
+		if((isParryMode && Input.GetKeyDown(KeyCode.Space)) || isParryDash)
 		{
 			isParryDash = true;
 			ParryAction();
@@ -50,7 +50,7 @@ public class Parry : MonoBehaviour
 
 	void OnTriggerEnter2D(Collider2D collision)
 	{
-		enemy = collision.transform.parent.gameObject;
+		enemy = collision.gameObject;
 		Debug.Log(enemy.name);
 		//if(collision.CompareTag("Enemy"))
 		//{
@@ -67,8 +67,9 @@ public class Parry : MonoBehaviour
 		//	}
 		//}
 		//else
-		if (collision.CompareTag("Parryable"))
+		if(collision.CompareTag("Parryable"))
 		{
+			enemy = collision.transform.parent.gameObject;
 			isParryMode = true;
 			ParryMode();
 		}
@@ -80,7 +81,7 @@ public class Parry : MonoBehaviour
 		ExitParryMode();
 	}
 
-	
+
 
 	public void ParryMode()
 	{
@@ -110,7 +111,7 @@ public class Parry : MonoBehaviour
 
 	void ParryAction()
 	{
-		if (isParryMode)
+		if(isParryMode)
 		{
 			SuccessfullParry();
 		}
@@ -118,7 +119,7 @@ public class Parry : MonoBehaviour
 		isParryMode = false;
 		ExitParryMode();
 
-		if (parryDashTime <= 0)
+		if(parryDashTime <= 0)
 		{
 			isParryDash = false;
 			parryDashTime = startParryDashTime;
@@ -141,11 +142,10 @@ public class Parry : MonoBehaviour
 	}
 
 	void SuccessfullParry()
-    {
+	{
 		timer.AddParryTime();
 		score.AddScore();
-		Destroy(enemy);
-		//enemyCollision.KillEnemy(enemy);
+		enemy.GetComponent<MoscoAI>().Dead();
 	}
 
 	public void FailedlParry()

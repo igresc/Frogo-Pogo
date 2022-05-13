@@ -5,55 +5,33 @@ public class MoscoAI : MonoBehaviour
 	public float speed;
 	public float lineOfSight = 5;
 	public bool isChasing;
-	private GameObject player;
+	private GameObject trophy;
 	private Vector2 number;
 	private float movingTime = 2;
 
+	public ParticleSystem deathParticles;
 
 	void Start()
 	{
-		player = GameObject.FindGameObjectWithTag("Player");
+		trophy = GameObject.FindGameObjectWithTag("Trophy");
 	}
 
 	void Update()
 	{
-		if (movingTime <= 0)
-		{
-			number.x = Random.Range(-20, 20);
-			number.y = Random.Range(-10, 10);
-			movingTime = 2;
-		}
-		else movingTime -= Time.deltaTime;
-
-		if (Vector2.Distance(player.transform.position, transform.position) <= lineOfSight)
-		{
-			isChasing = true;
-		}
-		else
-		{
-			isChasing = false;
-		}
-
-		if (player == null)
-			return;
-		if (isChasing) { ChasePlayer(); }
-		else
-			Patroling();
-
+		ChaseTrophy();
 		Flip();
 	}
-	private void ChasePlayer()
+
+	private void ChaseTrophy()
 	{
-		transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
+		transform.position = Vector2.MoveTowards(transform.position, trophy.transform.position, speed * Time.deltaTime);
+		if(Random.Range(0f, 1f) >= .3f)
+			gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(Random.Range(-10, 10), Random.Range(-10, 10));
 	}
-	private void Patroling()
-	{
-		Vector2 moveTo = number;
-		transform.position = Vector2.MoveTowards(transform.position, moveTo, speed * Time.deltaTime);
-	}
+
 	private void Flip()
 	{
-		if (transform.position.x > player.transform.position.x)
+		if(transform.position.x > trophy.transform.position.x)
 		{
 			transform.rotation = Quaternion.Euler(0, 0, 0);
 		}
@@ -63,5 +41,10 @@ public class MoscoAI : MonoBehaviour
 		}
 	}
 
+	public void Dead()
+	{
+		Instantiate(deathParticles, transform.position, Quaternion.identity);
+		Destroy(gameObject);
+	}
 
 }

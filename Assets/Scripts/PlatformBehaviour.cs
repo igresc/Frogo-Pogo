@@ -18,12 +18,12 @@ public class PlatformBehaviour : MonoBehaviour
 	{
 		moveInput = Input.GetAxisRaw("Vertical");
 
-		if (moveInput < 0 && isPlayer == true)
+		if(moveInput < 0 && isPlayer == true)
 		{
 			effector.rotationalOffset = 180f;
 			waitTime -= Time.deltaTime;
 		}
-		if (Input.GetButtonDown("AltJump") || waitTime <= 0)
+		if(Input.GetButtonDown("AltJump") || waitTime <= 0)
 		{
 			effector.rotationalOffset = 0;
 			waitTime = 0.5f;
@@ -31,11 +31,11 @@ public class PlatformBehaviour : MonoBehaviour
 	}
 	void OnTriggerEnter2D(Collider2D collision)
 	{
-		if (collision.tag != "Player")
+		if(collision.tag != "Player")
 		{
 			effector.rotationalOffset = 0;
 		}
-		else if (collision.tag == "Player")
+		else if(collision.tag == "Player")
 		{
 			isPlayer = true;
 		}

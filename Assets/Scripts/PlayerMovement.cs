@@ -24,17 +24,17 @@ public class PlayerMovement : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		if (Input.GetButtonDown("AltJump"))
+		if(Input.GetButtonDown("AltJump"))
 		{
 			isJumping = true;
 			//m_Rigidbody2D.velocity = Vector2.up * controller.m_JumpForce;
 		}
 
-		if (m_Rigidbody2D.velocity.y < 0)
+		if(m_Rigidbody2D.velocity.y < 0)
 		{
 			m_Rigidbody2D.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime; // -1 acount for the physics system normal gravity
 		}
-		else if (m_Rigidbody2D.velocity.y > 0 && !Input.GetButton("AltJump"))
+		else if(m_Rigidbody2D.velocity.y > 0 && !Input.GetButton("AltJump"))
 		{
 			m_Rigidbody2D.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime; // -1 acount for the physics system normal gravity
 		}
@@ -50,7 +50,7 @@ public class PlayerMovement : MonoBehaviour
 	void FixedUpdate()
 	{
 		controller.Move(horizontalMove * Time.fixedDeltaTime, false);
-		if (isJumping)
+		if(isJumping)
 		{
 			isJumping = false;
 			controller.Jump();

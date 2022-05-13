@@ -18,7 +18,7 @@ public class TrophyLogic : MonoBehaviour
 	}
 	private void Update()
 	{
-		if (score <= 0)
+		if(score <= 0)
 		{
 			score = 0;
 		}
@@ -40,7 +40,7 @@ public class TrophyLogic : MonoBehaviour
 	}
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
-		if (collision.CompareTag("Enemy"))
+		if(collision.CompareTag("Enemy"))
 		{
 			RemoveScore();
 		}

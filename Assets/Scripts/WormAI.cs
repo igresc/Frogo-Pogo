@@ -15,7 +15,7 @@ public class WormAI : MonoBehaviour
 	}
 	void Update()
 	{
-		if (movingTime <= 0)
+		if(movingTime <= 0)
 		{
 			number.x = Random.Range(-20, 20);
 			number.y = 0;
@@ -36,7 +36,7 @@ public class WormAI : MonoBehaviour
 	}
 	private void Flip()
 	{
-		if (transform.position.x > player.transform.position.x)
+		if(transform.position.x > player.transform.position.x)
 		{
 			transform.rotation = Quaternion.Euler(0, 0, 0);
 		}

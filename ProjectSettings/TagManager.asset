@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Parryable
   - Enemy
+  - Trophy
   layers:
   - Default
   - TransparentFX
