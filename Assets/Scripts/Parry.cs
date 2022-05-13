@@ -56,14 +56,13 @@ public class Parry : MonoBehaviour
 		Debug.Log(isParrying);
 		Time.timeScale = 1f;
 		Time.fixedDeltaTime = defaultTimeFixedValue;
-		
+
 		//if (controller.m_FacingRight)
 		//{
 		//	impulseForce.x *= 1;
 		//}
 		//else
 		//	impulseForce.x *= -1;
-
 		GetComponent<Rigidbody2D>().AddForce(impulseForce, ForceMode2D.Impulse);
 		
 	}
