@@ -32,11 +32,11 @@ public class ChatController : MonoBehaviour
 
 		string formattedInput = "[<#FFFF80>" + timeNow.Hour.ToString("d2") + ":" + timeNow.Minute.ToString("d2") + ":" + timeNow.Second.ToString("d2") + "</color>] " + newText;
 
-		if(ChatDisplayOutput != null)
+		if (ChatDisplayOutput != null)
 		{
 			// No special formatting for first entry
 			// Add line feed before each subsequent entries
-			if(ChatDisplayOutput.text == string.Empty)
+			if (ChatDisplayOutput.text == string.Empty)
 				ChatDisplayOutput.text = formattedInput;
 			else
 				ChatDisplayOutput.text += "\n" + formattedInput;

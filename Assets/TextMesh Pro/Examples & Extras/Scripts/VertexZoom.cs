@@ -42,7 +42,7 @@ namespace TMPro.Examples
 
 		void ON_TEXT_CHANGED(Object obj)
 		{
-			if(obj == m_TextComponent)
+			if (obj == m_TextComponent)
 				hasTextChanged = true;
 		}
 
@@ -68,10 +68,10 @@ namespace TMPro.Examples
 
 			hasTextChanged = true;
 
-			while(true)
+			while (true)
 			{
 				// Allocate new vertices 
-				if(hasTextChanged)
+				if (hasTextChanged)
 				{
 					// Get updated vertex data
 					cachedMeshInfoVertexData = textInfo.CopyMeshInfoVertexData();
@@ -82,7 +82,7 @@ namespace TMPro.Examples
 				int characterCount = textInfo.characterCount;
 
 				// If No Characters then just yield and wait for some text to be added
-				if(characterCount == 0)
+				if (characterCount == 0)
 				{
 					yield return new WaitForSeconds(0.25f);
 					continue;
@@ -92,12 +92,12 @@ namespace TMPro.Examples
 				modifiedCharScale.Clear();
 				scaleSortingOrder.Clear();
 
-				for(int i = 0; i < characterCount; i++)
+				for (int i = 0; i < characterCount; i++)
 				{
 					TMP_CharacterInfo charInfo = textInfo.characterInfo[i];
 
 					// Skip characters that are not visible and thus have no geometry to manipulate.
-					if(!charInfo.isVisible)
+					if (!charInfo.isVisible)
 						continue;
 
 					// Get the index of the material used by the current character.
@@ -168,7 +168,7 @@ namespace TMPro.Examples
 				}
 
 				// Push changes into meshes
-				for(int i = 0; i < textInfo.meshInfo.Length; i++)
+				for (int i = 0; i < textInfo.meshInfo.Length; i++)
 				{
 					//// Sort Quads based modified scale
 					scaleSortingOrder.Sort((a, b) => modifiedCharScale[a].CompareTo(modifiedCharScale[b]));

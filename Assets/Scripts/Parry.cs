@@ -30,7 +30,7 @@ public class Parry : MonoBehaviour
 
 	private void Update()
 	{
-		if((isParryMode && Input.GetKeyDown(KeyCode.Space)) || isParryDash)
+		if ((isParryMode && Input.GetKeyDown(KeyCode.Space)) || isParryDash)
 		{
 			isParryDash = true;
 			ParryAction();
@@ -55,7 +55,7 @@ public class Parry : MonoBehaviour
 		//	}
 		//}
 		//else
-		if(collision.CompareTag("Parryable"))
+		if (collision.CompareTag("Parryable"))
 		{
 			ParryMode();
 		}
@@ -80,7 +80,7 @@ public class Parry : MonoBehaviour
 
 	void ParryAction()
 	{
-		if(isParryMode)
+		if (isParryMode)
 		{
 			timer.AddParryTime();
 		}
@@ -89,7 +89,7 @@ public class Parry : MonoBehaviour
 		Time.timeScale = 1f;
 		Time.fixedDeltaTime = defaultTimeFixedValue;
 
-		if(parryDashTime <= 0)
+		if (parryDashTime <= 0)
 		{
 			isParryDash = false;
 			parryDashTime = startParryDashTime;

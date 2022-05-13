@@ -31,7 +31,7 @@ public class CharacterController2D : MonoBehaviour
 	{
 		m_Rigidbody2D = GetComponent<Rigidbody2D>();
 
-		if(OnLandEvent == null)
+		if (OnLandEvent == null)
 			OnLandEvent = new UnityEvent();
 	}
 
@@ -43,12 +43,12 @@ public class CharacterController2D : MonoBehaviour
 		// The player is grounded if a circlecast to the groundcheck position hits anything designated as ground
 		// This can be done using layers instead but Sample Assets will not overwrite your project settings.
 		Collider2D[] colliders = Physics2D.OverlapCircleAll(m_GroundCheck.position, k_GroundedRadius, m_WhatIsGround);
-		for(int i = 0; i < colliders.Length; i++)
+		for (int i = 0; i < colliders.Length; i++)
 		{
-			if(colliders[i].gameObject != gameObject)
+			if (colliders[i].gameObject != gameObject)
 			{
 				m_Grounded = true;
-				if(!wasGrounded)
+				if (!wasGrounded)
 					OnLandEvent.Invoke();
 			}
 		}
@@ -59,7 +59,7 @@ public class CharacterController2D : MonoBehaviour
 	{
 
 		//only control the player if grounded or airControl is turned on
-		if(m_Grounded || m_AirControl)
+		if (m_Grounded || m_AirControl)
 		{
 
 			// Move the character by finding the target velocity
@@ -68,13 +68,13 @@ public class CharacterController2D : MonoBehaviour
 			m_Rigidbody2D.velocity = Vector3.SmoothDamp(m_Rigidbody2D.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
 
 			// If the input is moving the player right and the player is facing left...
-			if(move > 0 && !m_FacingRight)
+			if (move > 0 && !m_FacingRight)
 			{
 				// ... flip the player.
 				Flip();
 			}
 			// Otherwise if the input is moving the player left and the player is facing right...
-			else if(move < 0 && m_FacingRight)
+			else if (move < 0 && m_FacingRight)
 			{
 				// ... flip the player.
 				Flip();
@@ -85,7 +85,7 @@ public class CharacterController2D : MonoBehaviour
 	public void Jump()
 	{
 		// If the player should jump...
-		if(m_Grounded)
+		if (m_Grounded)
 		{
 			// Add a vertical force to the player.
 			m_Grounded = false;

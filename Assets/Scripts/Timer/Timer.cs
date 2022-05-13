@@ -16,7 +16,7 @@ public class Timer : MonoBehaviour
 	}
 	void Update()
 	{
-		if(timeValue > 0)
+		if (timeValue > 0)
 		{
 			timeValue -= Time.deltaTime;
 		}
@@ -30,7 +30,7 @@ public class Timer : MonoBehaviour
 	}
 	void DisplayTime(float timeToDisplay)
 	{
-		if(timeToDisplay < 0)
+		if (timeToDisplay < 0)
 		{
 			timeToDisplay = 0;
 		}
@@ -40,7 +40,7 @@ public class Timer : MonoBehaviour
 
 		timeText.text = string.Format("{00:00}:{1:00}", minutes, seconds);
 
-		if(seconds <= 5 && minutes <= 0)
+		if (seconds <= 5 && minutes <= 0)
 		{
 			timeText.color = new Color(255, 0, 0, 255);
 		}
