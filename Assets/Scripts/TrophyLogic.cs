@@ -7,8 +7,13 @@ public class TrophyLogic : MonoBehaviour
 	public Parry parry;
 	public int score;
 
+	
+
 	public int addScore = 50;
 	public int removeScore = 100;
+
+	public ParticleSystem addParticles;
+
 	private void Start()
 	{
 		score = 0;
@@ -20,11 +25,16 @@ public class TrophyLogic : MonoBehaviour
 			score = 0;
 		}
 
+		//if (Input.GetKeyDown(KeyCode.U)) 
+		//{
+		//	AddScore();
+		//}
 		scoreText.text = System.Convert.ToString(score);
 	}
 	void AddScore()
 	{
 		score += addScore;
+		Instantiate(addParticles);
 	}
 	void RemoveScore()
 	{
