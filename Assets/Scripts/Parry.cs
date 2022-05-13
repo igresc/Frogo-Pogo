@@ -57,17 +57,7 @@ public class Parry : MonoBehaviour
 		Time.timeScale = 1f;
 		Time.fixedDeltaTime = defaultTimeFixedValue;
 
-		//if (controller.m_FacingRight)
-		//{
-		//	impulseForce.x *= 1;
-		//}
-		//else
-		//	impulseForce.x *= -1;
-<<<<<<< HEAD
-
 		GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-=======
->>>>>>> 541d337e26a786d166b418b99bc571c47a8cbcaa
 		GetComponent<Rigidbody2D>().AddForce(impulseForce, ForceMode2D.Impulse);
 		
 	}
