@@ -70,12 +70,12 @@ GameObject:
   m_Component:
   - component: {fileID: 2425520763743013036}
   - component: {fileID: 6090950922951280648}
-  - component: {fileID: 5780632803445007211}
   - component: {fileID: 7872243354737018161}
   - component: {fileID: 8534177526079317929}
   - component: {fileID: 4219151717583256178}
-  - component: {fileID: 6681572987499384054}
   - component: {fileID: 4711397461153816431}
+  - component: {fileID: 5780632803445007211}
+  - component: {fileID: 6681572987499384054}
   - component: {fileID: 3664183681016681437}
   m_Layer: 3
   m_Name: Player
@@ -151,29 +151,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5780632803445007211
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4530205548938474858}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0df953cb8b699ea418cd8f5991d3cc35, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_JumpForce: 700
-  m_MovementSmoothing: 0.05
-  m_AirControl: 1
-  m_WhatIsGround:
-    serializedVersion: 2
-    m_Bits: 64
-  m_GroundCheck: {fileID: 5305661273901916862}
-  m_CeilingCheck: {fileID: 1576615311185870647}
-  OnLandEvent:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!50 &7872243354737018161
 Rigidbody2D:
   serializedVersion: 4
@@ -237,20 +214,6 @@ CircleCollider2D:
   m_Offset: {x: -0.0066945553, y: -0.02}
   serializedVersion: 2
   m_Radius: 0.49370217
---- !u!114 &6681572987499384054
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4530205548938474858}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c408aec38e983841acf41eee8bdba7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  controller: {fileID: 5780632803445007211}
-  runSpeed: 40
 --- !u!58 &4711397461153816431
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -267,6 +230,47 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.74
+--- !u!114 &5780632803445007211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4530205548938474858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0df953cb8b699ea418cd8f5991d3cc35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_JumpForce: 700
+  m_MovementSmoothing: 0.05
+  m_AirControl: 1
+  m_WhatIsGround:
+    serializedVersion: 2
+    m_Bits: 64
+  m_GroundCheck: {fileID: 5305661273901916862}
+  m_CeilingCheck: {fileID: 1576615311185870647}
+  m_FacingRight: 1
+  OnLandEvent:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &6681572987499384054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4530205548938474858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c408aec38e983841acf41eee8bdba7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controller: {fileID: 5780632803445007211}
+  parryController: {fileID: 0}
+  runSpeed: 40
+  fallMultiplier: 2.5
+  lowJumpMultiplier: 2
 --- !u!114 &3664183681016681437
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -279,3 +283,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dbad27be27f4984ba5f002b76f85524, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  controller: {fileID: 0}
+  isParrying: 0
+  slowDownTime: 0.3
+  impulseForce: {x: 0, y: 0}
