@@ -242,7 +242,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0df953cb8b699ea418cd8f5991d3cc35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_JumpForce: 700
+  m_JumpForce: 18
   m_MovementSmoothing: 0.05
   m_AirControl: 1
   m_WhatIsGround:
@@ -269,8 +269,8 @@ MonoBehaviour:
   controller: {fileID: 5780632803445007211}
   parryController: {fileID: 0}
   runSpeed: 40
-  fallMultiplier: 2.5
-  lowJumpMultiplier: 2
+  fallMultiplier: 6
+  lowJumpMultiplier: 5.5
 --- !u!114 &3664183681016681437
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -284,6 +284,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 0}
+  timer: {fileID: 0}
   isParrying: 0
   slowDownTime: 0.3
   impulseForce: {x: 0, y: 0}
