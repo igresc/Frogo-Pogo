@@ -5,6 +5,7 @@ public class Parry : MonoBehaviour
 	public CharacterController2D controller;
 	public Timer timer;
 	public TrophyLogic score;
+	public EnemyCollision enemyCollision;
 
 	public float slowDownTime = 0.3f;
 	public Vector2 parrySpeed;
@@ -18,6 +19,8 @@ public class Parry : MonoBehaviour
 	public float startParryTime;
 	public float midParryTime;
 	private float parryTime;
+
+	private GameObject enemy;
 
 	private float defaultTimeFixedValue;
 	private Rigidbody2D rb;
@@ -47,6 +50,8 @@ public class Parry : MonoBehaviour
 
 	void OnTriggerEnter2D(Collider2D collision)
 	{
+		enemy = collision.transform.parent.gameObject;
+		Debug.Log(enemy.name);
 		//if(collision.CompareTag("Enemy"))
 		//{
 		//	isParryMode = true;
@@ -75,15 +80,7 @@ public class Parry : MonoBehaviour
 		ExitParryMode();
 	}
 
-	void OnCollisionEnter2D(Collision2D collision)
-    {
-		Debug.Log(collision);
-		if (collision.gameObject.CompareTag("Parryable"))
-        {
-			score.RemoveScore();
-			timer.RemoveParryTime();
-		}
-    }
+	
 
 	public void ParryMode()
 	{
@@ -115,8 +112,7 @@ public class Parry : MonoBehaviour
 	{
 		if (isParryMode)
 		{
-			timer.AddParryTime();
-			score.AddScore();
+			SuccessfullParry();
 		}
 
 		isParryMode = false;
@@ -142,5 +138,19 @@ public class Parry : MonoBehaviour
 		parryTime = startParryTime;
 		Time.timeScale = 1f;
 		Time.fixedDeltaTime = defaultTimeFixedValue;
+	}
+
+	void SuccessfullParry()
+    {
+		timer.AddParryTime();
+		score.AddScore();
+		Destroy(enemy);
+		//enemyCollision.KillEnemy(enemy);
+	}
+
+	public void FailedlParry()
+	{
+		score.RemoveScore();
+		timer.RemoveParryTime();
 	}
 }

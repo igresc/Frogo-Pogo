@@ -62,4 +62,6 @@ public class MoscoAI : MonoBehaviour
 			transform.rotation = Quaternion.Euler(0, 180, 0);
 		}
 	}
+
+
 }
