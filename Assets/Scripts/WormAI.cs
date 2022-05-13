@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class WormAI : MonoBehaviour
@@ -28,7 +26,7 @@ public class WormAI : MonoBehaviour
 		Patroling();
 
 		Flip();
-		
+
 	}
 	private void Patroling()
 	{
@@ -47,5 +45,5 @@ public class WormAI : MonoBehaviour
 			transform.rotation = Quaternion.Euler(0, 180, 0);
 		}
 	}
-	
+
 }

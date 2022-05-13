@@ -22,9 +22,9 @@ namespace TMPro.Examples
 		void Start()
 		{
 
-			for(int i = 0; i < NumberOfNPC; i++)
+			for (int i = 0; i < NumberOfNPC; i++)
 			{
-				if(SpawnType == 0)
+				if (SpawnType == 0)
 				{
 					// TextMesh Pro Implementation     
 					//go.transform.localScale = new Vector3(2, 2, 2);
