@@ -97,7 +97,7 @@ public class Parry : MonoBehaviour
 		}
 		else // Succesfull parry
 		{
-			Debug.Log(parryDashTime);
+			//Debug.Log(parryDashTime);
 			parryDashTime -= Time.deltaTime;
 			rb.velocity = Vector2.up * parrySpeed;
 		}
