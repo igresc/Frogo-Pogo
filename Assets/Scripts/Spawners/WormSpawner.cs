@@ -21,15 +21,15 @@ public class WormSpawner : MonoBehaviour
 	}
 	void Update()
 	{
-		
+
 		Spawn();
-		
+
 	}
 
 	void Spawn()
 	{
 		Debug.Log("Spawning");
-		if (innerCount >= maxCount)
+		if(innerCount >= maxCount)
 		{
 			maxCount += 2;
 		}
@@ -38,7 +38,7 @@ public class WormSpawner : MonoBehaviour
 			Vector2 pos = new Vector2(Random.Range(transform.position.x - 2, transform.position.x + 2), transform.position.y);
 			number = Random.Range(0, 2);
 			Debug.Log(number);
-			switch (number)
+			switch(number)
 			{
 				case 0:
 					Instantiate(Worm[0], pos, Quaternion.identity);

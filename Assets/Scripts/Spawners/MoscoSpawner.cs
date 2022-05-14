@@ -28,7 +28,7 @@ public class MoscoSpawner : MonoBehaviour
 	void Spawn()
 	{
 		Debug.Log("Spawning");
-		if (innerCount >= maxCount)
+		if(innerCount >= maxCount)
 		{
 			Destroy(this);
 		}
@@ -37,7 +37,7 @@ public class MoscoSpawner : MonoBehaviour
 			Vector2 pos = new Vector2(Random.Range(transform.position.x - 2, transform.position.x + 2), Random.Range(transform.position.y - 2, transform.position.y + 2));
 			number = Random.Range(0, 2);
 			Debug.Log(number);
-			switch (number)
+			switch(number)
 			{
 				case 0:
 					Instantiate(Mosco[0], pos, Quaternion.identity);

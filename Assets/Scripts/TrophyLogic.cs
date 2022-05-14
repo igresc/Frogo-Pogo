@@ -38,10 +38,10 @@ public class TrophyLogic : MonoBehaviour
 		//	RemoveScore();
 		//}
 
-		if (isAdding || isRemoving) 
+		if(isAdding || isRemoving)
 		{
 			startTimer -= Time.deltaTime;
-			if (startTimer <= 0)
+			if(startTimer <= 0)
 			{
 				scoreText.color = defaultColor;
 				scoreAnim.SetBool("Add", false);
@@ -49,15 +49,15 @@ public class TrophyLogic : MonoBehaviour
 				isRemoving = false;
 				startTimer = 1;
 			}
-			else 
+			else
 			{
 				scoreAnim.SetBool("Add", true);
-				if (isRemoving) { scoreText.color = new Color(255, 0, 0, 255); }
-				if (isAdding) { scoreText.color = new Color(0, 255, 0, 255); }
-				
+				if(isRemoving) { scoreText.color = new Color(255, 0, 0, 255); }
+				if(isAdding) { scoreText.color = new Color(0, 255, 0, 255); }
+
 			}
 		}
-		
+
 		scoreText.text = System.Convert.ToString(score);
 	}
 	public void AddScore()

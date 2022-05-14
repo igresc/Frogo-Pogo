@@ -10,24 +10,24 @@ public class StartingMenu : MonoBehaviour
 	int countdown;
 	float timeDown = 5;
 
-    // Start is called before the first frame update
-    void Start()
-    {
+	// Start is called before the first frame update
+	void Start()
+	{
 		countdown = 3;
 		text.text = System.Convert.ToString(countdown);
-    }
+	}
 
-    // Update is called once per frame
-    void Update()
-    {
+	// Update is called once per frame
+	void Update()
+	{
 		Invoke("Countdown", 1);
 		text.text = System.Convert.ToString(countdown);
-		if (countdown <= 0) 
+		if(countdown <= 0)
 		{
 			StartingPanel.SetActive(false);
 		}
 	}
-	void CountDown() 
+	void CountDown()
 	{
 		Debug.Log("Time");
 		countdown--;

@@ -7,10 +7,8 @@ public class MoscoAI : MonoBehaviour
 	public bool isChasing;
 	private GameObject trophy;
 	private GameObject player;
-	private Vector2 number;
 
 	public ParticleSystem deathParticles;
-	//public Parry parry;
 
 	void Start()
 	{
@@ -33,10 +31,9 @@ public class MoscoAI : MonoBehaviour
 	}
 	void OnTriggerEnter2D(Collider2D collision)
 	{
-		if (collision.gameObject == trophy)
+		if(collision.gameObject == trophy)
 		{
 			player.GetComponent<Parry>().FailedlParry();
-			//parry.FailedlParry();
 			Dead();
 		}
 	}

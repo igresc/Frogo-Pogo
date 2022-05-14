@@ -42,17 +42,16 @@ public class Parry : MonoBehaviour
 	{
 		if((isParryMode && Input.GetKeyDown(KeyCode.Space)) || isParryDash)
 		{
-			
+
 			isParryDash = true;
 			ParryAction();
 		}
 		else
 		{
-			
+
 			ParryMode();
 		}
 	}
-
 
 	void OnTriggerEnter2D(Collider2D collision)
 	{
@@ -117,7 +116,6 @@ public class Parry : MonoBehaviour
 	{
 		if(isParryMode)
 		{
-			
 			SuccessfullParry();
 		}
 
@@ -152,17 +150,17 @@ public class Parry : MonoBehaviour
 		//frogo.SetBool("IsParrying", true);
 		timer.AddParryTime();
 		score.AddScore();
-		Debug.Log("aquiii" + enemy.name);
+		//Debug.Log("aquiii" + enemy.name);
 		if(enemy.name.Contains("Mosco"))
 		{
 			enemy.GetComponent<MoscoAI>().Dead();
 		}
 
-		if (enemy.name.Contains("Worm"))
+		if(enemy.name.Contains("Worm"))
 		{
 			enemy.GetComponent<WormAI>().Dead();
 		}
-		
+
 	}
 
 	public void FailedlParry()
