@@ -121,6 +121,9 @@ MonoBehaviour:
   speed: 4
   lineOfSight: 5
   isChasing: 0
+  parrySpeed: {x: 0, y: 10}
+  deathParticles: {fileID: 3018228628753384751, guid: 6804a6c884266dc4d8c2856bc446d04c, type: 3}
+  parry: {fileID: 0}
 --- !u!58 &120263752158529900
 CircleCollider2D:
   m_ObjectHideFlags: 0

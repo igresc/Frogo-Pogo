@@ -81,8 +81,6 @@ public class Parry : MonoBehaviour
 		ExitParryMode();
 	}
 
-
-
 	public void ParryMode()
 	{
 		if(isParryMode)
@@ -145,7 +143,17 @@ public class Parry : MonoBehaviour
 	{
 		timer.AddParryTime();
 		score.AddScore();
-		enemy.GetComponent<MoscoAI>().Dead();
+		Debug.Log("aquiii" + enemy.name);
+		if(enemy.name.Contains("Mosco"))
+		{
+			enemy.GetComponent<MoscoAI>().Dead();
+		}
+
+		if (enemy.name.Contains("Worm"))
+		{
+			enemy.GetComponent<WormAI>().Dead();
+		}
+		
 	}
 
 	public void FailedlParry()
