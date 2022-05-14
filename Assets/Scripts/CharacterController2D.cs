@@ -10,6 +10,9 @@ public class CharacterController2D : MonoBehaviour
 	[SerializeField] private Transform m_GroundCheck;                           // A position marking where to check if the player is grounded.
 	[SerializeField] private Transform m_CeilingCheck;                          // A position marking where to check for ceilings
 
+	[SerializeField] public float fallMultiplier = 6f;
+	[SerializeField] public float lowJumpMultiplier = 5.5f;
+
 	const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
 	private bool m_Grounded;            // Whether or not the player is grounded.
 	const float k_CeilingRadius = .2f; // Radius of the overlap circle to determine if the player can stand up
@@ -17,7 +20,6 @@ public class CharacterController2D : MonoBehaviour
 	public bool m_FacingRight = true;  // For determining which way the player is currently facing.
 	private Vector3 m_Velocity = Vector3.zero;
 
-	
 
 	[Header("Events")]
 	[Space]
@@ -53,8 +55,16 @@ public class CharacterController2D : MonoBehaviour
 					OnLandEvent.Invoke();
 			}
 		}
-	}
 
+		if(m_Rigidbody2D.velocity.y < 0)
+		{
+			m_Rigidbody2D.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime; // -1 acount for the physics system normal gravity
+		}
+		else if(m_Rigidbody2D.velocity.y > 0 && !Input.GetButton("AltJump"))
+		{
+			m_Rigidbody2D.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime; // -1 acount for the physics system normal gravity
+		}
+	}
 
 	public void Move(float move, bool jump)
 	{

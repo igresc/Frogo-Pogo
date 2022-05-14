@@ -14,24 +14,24 @@ public class AguiluchoAtack : MonoBehaviour
 
 	private float actualCooldownAttack;
 
-	
-    void Start()
-    {
-		actualCooldownAttack = 0;
-		
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
+	void Start()
+	{
+		actualCooldownAttack = 0;
+
+	}
+
+	// Update is called once per frame
+	void Update()
+	{
 		actualCooldownAttack -= Time.deltaTime;
-    }
+	}
 
 	private void FixedUpdate()
 	{
 		RaycastHit2D hit2D = Physics2D.CircleCast(transform.position, 7, Vector2.down, distanceRaycast);
 
-		if (hit2D.collider != null)
+		if(hit2D.collider != null)
 		{
 			if(hit2D.collider.CompareTag("Player"))
 			{
@@ -50,7 +50,7 @@ public class AguiluchoAtack : MonoBehaviour
 	{
 		GameObject newBullet;
 
-		newBullet = Instantiate(AguiluchoBullet,transform.position, transform.rotation);
+		newBullet = Instantiate(AguiluchoBullet, transform.position, transform.rotation);
 
 	}
 }

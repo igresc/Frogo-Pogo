@@ -33,7 +33,7 @@ public class AguiluchoAI : MonoBehaviour
 		{
 			if(waitTime <= 0)
 			{
-				if (moveSpot[i] != moveSpot[moveSpot.Length - 1])
+				if(moveSpot[i] != moveSpot[moveSpot.Length - 1])
 				{
 					i++;
 				}

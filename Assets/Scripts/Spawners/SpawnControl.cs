@@ -8,11 +8,11 @@ public class SpawnControl : MonoBehaviour
 
 	private void Update()
 	{
-		if (Input.GetKeyDown(KeyCode.T)) 
+		if(Input.GetKeyDown(KeyCode.T))
 		{
 			int number = Random.Range(0, Spawners.Length);
 			Debug.Log(number);
-			switch (number)
+			switch(number)
 			{
 				case 0:
 					Spawners[0].SetActive(true);
@@ -29,5 +29,5 @@ public class SpawnControl : MonoBehaviour
 			}
 		}
 	}
-		
+
 }

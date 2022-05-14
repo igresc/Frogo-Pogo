@@ -46,7 +46,7 @@ public class Timer : MonoBehaviour
 
 		timeText.text = string.Format("{00:00}:{1:00}", minutes, seconds);
 
-		if (seconds <= 10 && minutes <= 0)
+		if(seconds <= 10 && minutes <= 0)
 		{
 			timeText.color = new Color(255, 0, 0, 255);
 			timer.SetBool("Finishing", true);

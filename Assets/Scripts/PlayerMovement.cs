@@ -8,9 +8,11 @@ public class PlayerMovement : MonoBehaviour
 	public float runSpeed = 40f;
 	float horizontalMove = 0f;
 
-	[SerializeField] public float fallMultiplier = 6f;
-	[SerializeField] public float lowJumpMultiplier = 5.5f;
-	
+
+	//TODO coyote Jump
+	private float coyoteTime = 0.2f;
+	private float coyoteTimeCounter;
+
 	//Animators
 	public Animator frogo;
 
@@ -26,41 +28,27 @@ public class PlayerMovement : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		if (Input.GetButtonDown("AltJump"))
+		if(Input.GetButtonDown("AltJump"))
 		{
 			isJumping = true;
-			frogo.SetBool("IsJumping", true);
-			//m_Rigidbody2D.velocity = Vector2.up * controller.m_JumpForce;
-		}
-
-		if(m_Rigidbody2D.velocity.y < 0)
-		{
-			m_Rigidbody2D.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime; // -1 acount for the physics system normal gravity
-		}
-		else if(m_Rigidbody2D.velocity.y > 0 && !Input.GetButton("AltJump"))
-		{
-			m_Rigidbody2D.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime; // -1 acount for the physics system normal gravity
 		}
 
 		horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
-		Debug.Log(horizontalMove);
-		if (horizontalMove != 0)
+		//Debug.Log(horizontalMove);
+		if(horizontalMove != 0)
 		{
 			frogo.SetBool("IsWalking", true);
 		}
-		else 
+		else
 		{
 			frogo.SetBool("IsWalking", false);
 		}
-
-		//if(Input.GetButtonDown("AltJump") && parryController.isParryMode)
-		//{
-		//	parryController.ParryMode();
-		//}
 	}
+
 	void FixedUpdate()
 	{
 		controller.Move(horizontalMove * Time.fixedDeltaTime, false);
+
 		if(isJumping)
 		{
 			isJumping = false;
