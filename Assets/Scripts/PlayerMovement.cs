@@ -10,12 +10,14 @@ public class PlayerMovement : MonoBehaviour
 
 	[SerializeField] public float fallMultiplier = 6f;
 	[SerializeField] public float lowJumpMultiplier = 5.5f;
+	
+	//Animators
+	public Animator frogo;
 
 
 	public bool isJumping;
 
 	Rigidbody2D m_Rigidbody2D;
-
 	void Awake()
 	{
 		m_Rigidbody2D = GetComponent<Rigidbody2D>();
@@ -40,7 +42,15 @@ public class PlayerMovement : MonoBehaviour
 		}
 
 		horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
-
+		Debug.Log(horizontalMove);
+		if (horizontalMove != 0)
+		{
+			frogo.SetBool("IsWalking", true);
+		}
+		else 
+		{
+			frogo.SetBool("IsWalking", false);
+		}
 
 		//if(Input.GetButtonDown("AltJump") && parryController.isParryMode)
 		//{

@@ -213,7 +213,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 3.39
+  m_Radius: 3.88
 --- !u!114 &5780632803445007211
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -235,7 +235,6 @@ MonoBehaviour:
   m_GroundCheck: {fileID: 5305661273901916862}
   m_CeilingCheck: {fileID: 1576615311185870647}
   m_FacingRight: 1
-  frogo: {fileID: 1637398959220885465}
   OnLandEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -256,6 +255,7 @@ MonoBehaviour:
   runSpeed: 40
   fallMultiplier: 6
   lowJumpMultiplier: 5.5
+  frogo: {fileID: 1637398959220885465}
   isJumping: 0
 --- !u!114 &3664183681016681437
 MonoBehaviour:
