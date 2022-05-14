@@ -118,6 +118,7 @@ MonoBehaviour:
   lineOfSight: 10
   isChasing: 0
   deathParticles: {fileID: 3018228628753384751, guid: 6804a6c884266dc4d8c2856bc446d04c, type: 3}
+  parry: {fileID: 0}
 --- !u!50 &4081025415815138334
 Rigidbody2D:
   serializedVersion: 4
@@ -185,4 +186,4 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.8
+  m_Radius: 0.7
