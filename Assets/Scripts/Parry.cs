@@ -85,19 +85,19 @@ public class Parry : MonoBehaviour
 	{
 		if(isParryMode)
 		{
-			Time.timeScale = slowDownTime;
-			Time.fixedDeltaTime = Time.timeScale * .02f;
+			//Time.timeScale = slowDownTime;
+			//Time.fixedDeltaTime = Time.timeScale * .02f;
 
 			if(parryTime <= 0)
 			{
 				isParryMode = false;
 				parryTime = startParryTime;
 			}
-			else if(parryTime <= midParryTime && parryTime > 0)
-			{
-				Time.timeScale = 0.0000001f;
-				Time.fixedDeltaTime = Time.timeScale * .02f;
-			}
+			//else if(parryTime <= midParryTime && parryTime > 0)
+			//{
+			//	Time.timeScale = 0.0000001f;
+			//	Time.fixedDeltaTime = Time.timeScale * .02f;
+			//}
 			parryTime -= Time.fixedUnscaledDeltaTime;
 		}
 		else
