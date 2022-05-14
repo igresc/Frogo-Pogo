@@ -17,7 +17,8 @@ public class CharacterController2D : MonoBehaviour
 	public bool m_FacingRight = true;  // For determining which way the player is currently facing.
 	private Vector3 m_Velocity = Vector3.zero;
 
-
+	//Animators
+	public Animator frogo;
 
 	[Header("Events")]
 	[Space]
@@ -62,7 +63,8 @@ public class CharacterController2D : MonoBehaviour
 		//only control the player if grounded or airControl is turned on
 		if(m_Grounded || m_AirControl)
 		{
-
+			frogo.SetBool("IsWalking", true);
+			frogo.SetBool("IsIdle", false);
 			// Move the character by finding the target velocity
 			Vector3 targetVelocity = new Vector2(move * 10f, m_Rigidbody2D.velocity.y);
 			// And then smoothing it out and applying it to the character

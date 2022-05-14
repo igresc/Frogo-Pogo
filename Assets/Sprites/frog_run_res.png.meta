@@ -1,0 +1,272 @@
+fileFormatVersion: 2
+guid: 02af6e47d846a784c8a121f7a56cc36e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2101236280577100614
+    second: frog_run_res_0
+  - first:
+      213: -6005077852238850989
+    second: frog_run_res_1
+  - first:
+      213: 5208928958187830384
+    second: frog_run_res_2
+  - first:
+      213: -1934089385801332023
+    second: frog_run_res_3
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: frog_run_res_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 22
+        width: 760
+        height: 458
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 329.53125, y: -209.08359}
+        - {x: 379.99997, y: -161.52942}
+        - {x: 379.99997, y: 52.4644}
+        - {x: 357.73434, y: 229}
+        - {x: -216.71873, y: 229}
+        - {x: -379.99997, y: -72.365326}
+        - {x: -379.99997, y: -76.823524}
+        - {x: -347.34375, y: -131.80804}
+        - {x: -339.92188, y: -131.80804}
+        - {x: -360.7031, y: -143.6966}
+        - {x: -379.99997, y: -164.50156}
+        - {x: -379.99997, y: -212.05573}
+        - {x: -362.18747, y: -228.40248}
+        - {x: -212.26561, y: -228.40248}
+        - {x: -120.23437, y: -212.05573}
+        - {x: -117.26562, y: -209.08359}
+        - {x: 38.59375, y: -219.48607}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64b06fca347192d10800000000000000
+      internalID: 2101236280577100614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frog_run_res_1
+      rect:
+        serializedVersion: 2
+        x: 919
+        y: 0
+        width: 602
+        height: 461
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 206.50008, y: 230.5}
+        - {x: -222.48428, y: 230.5}
+        - {x: -301, y: 43.839012}
+        - {x: -301, y: -196.90402}
+        - {x: -280.3749, y: -216.22292}
+        - {x: -182.40616, y: -230.5}
+        - {x: 259.93756, y: -230.5}
+        - {x: 301, y: -60.18576}
+        - {x: 301, y: 106.253876}
+        - {x: 234.7032, y: 196.90402}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 354dcb8728da9aca0800000000000000
+      internalID: -6005077852238850989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frog_run_res_2
+      rect:
+        serializedVersion: 2
+        x: 1679
+        y: 0
+        width: 602
+        height: 441
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 209.46883, y: 220.5}
+        - {x: -209.12491, y: 220.5}
+        - {x: -301, y: 30.464397}
+        - {x: -301, y: -207.3065}
+        - {x: -215.06241, y: -220.5}
+        - {x: 222.8282, y: -220.5}
+        - {x: 276.2657, y: -128.54489}
+        - {x: 301, y: -49.783283}
+        - {x: 301, y: 92.87926}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07cf7051a45d94840800000000000000
+      internalID: 5208928958187830384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frog_run_res_3
+      rect:
+        serializedVersion: 2
+        x: 2439
+        y: 0
+        width: 601
+        height: 480
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 238.41414, y: 240}
+        - {x: -297.44522, y: 240}
+        - {x: -300.41397, y: 195.41797}
+        - {x: -300.41397, y: -240}
+        - {x: 247.32039, y: -240}
+        - {x: 274.03912, y: -201.36223}
+        - {x: 300.5, y: -103.28174}
+        - {x: 300.5, y: 104.76781}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ca457b63fbb825e0800000000000000
+      internalID: -1934089385801332023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

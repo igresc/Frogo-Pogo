@@ -12,7 +12,6 @@ public class MoscoSpawner : MonoBehaviour
 	int innerCount;
 	int number;
 
-	bool isInside = false;
 
 	public Vector2 center;
 	public Vector2 size;

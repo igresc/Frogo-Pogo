@@ -12,8 +12,6 @@ public class WormSpawner : MonoBehaviour
 	int innerCount;
 	int number;
 
-	bool isInside = false;
-
 	public Vector2 center;
 	public Vector2 size;
 
@@ -33,7 +31,7 @@ public class WormSpawner : MonoBehaviour
 		Debug.Log("Spawning");
 		if (innerCount >= maxCount)
 		{
-			Destroy(this);
+			maxCount += 2;
 		}
 		else
 		{
@@ -44,15 +42,13 @@ public class WormSpawner : MonoBehaviour
 			{
 				case 0:
 					Instantiate(Worm[0], pos, Quaternion.identity);
-					innerCount++;
-					Debug.Log(Worm[0].transform.position);
 					break;
 				case 1:
 					Instantiate(Worm[1], pos, Quaternion.identity);
-					innerCount++;
 					break;
 			}
 		}
+		innerCount++;
 	}
 
 	void OnDrawGizmosSelected()
