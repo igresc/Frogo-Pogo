@@ -1,0 +1,318 @@
+fileFormatVersion: 2
+guid: a9fbf47e9d833a74b8cf4f6fcab5bcb1
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4076800434744684568
+    second: frog_parry_0
+  - first:
+      213: 7156723430261689895
+    second: frog_parry_1
+  - first:
+      213: -1894671199797056249
+    second: frog_parry_2
+  - first:
+      213: -2111643759880433684
+    second: frog_parry_3
+  - first:
+      213: 7482202690569449016
+    second: frog_parry_4
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: frog_parry_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 521
+        height: 460
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 209.47266, y: 230}
+        - {x: -219.72656, y: 230}
+        - {x: -260.5, y: 159.81203}
+        - {x: -260.5, y: -175.93985}
+        - {x: -247.5586, y: -230}
+        - {x: 114.25781, y: -230}
+        - {x: 180.17578, y: -218.45863}
+        - {x: 260.5, y: -124.624054}
+        - {x: 260.5, y: 87.969925}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8107d154564b39830800000000000000
+      internalID: 4076800434744684568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frog_parry_1
+      rect:
+        serializedVersion: 2
+        x: 599
+        y: 0
+        width: 522
+        height: 460
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -187.62111, y: 230}
+        - {x: -260.86328, y: 121.69173}
+        - {x: -260.86328, y: -230}
+        - {x: 207.88672, y: -230}
+        - {x: 261, y: -102.63158}
+        - {x: 261, y: 151.01503}
+        - {x: 193.23828, y: 230}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72e8678ba0ac15360800000000000000
+      internalID: 7156723430261689895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frog_parry_2
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 0
+        width: 542
+        height: 460
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -217.23631, y: 230}
+        - {x: -271, y: 143.6842}
+        - {x: -271, y: -161.2782}
+        - {x: -267.04102, y: -178.87218}
+        - {x: -245.06834, y: -230}
+        - {x: 169.48244, y: -230}
+        - {x: 271, y: -152.4812}
+        - {x: 271, y: 129.02255}
+        - {x: 231.00587, y: 230}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70deee90596c4b5e0800000000000000
+      internalID: -1894671199797056249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frog_parry_3
+      rect:
+        serializedVersion: 2
+        x: 1796
+        y: 0
+        width: 602
+        height: 661
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3060436}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 83, y: 330.5}
+        - {x: -49, y: 245.5}
+        - {x: -298, y: 87.5}
+        - {x: -301, y: -330.5}
+        - {x: 184.74216, y: -330.5}
+        - {x: 301, y: -88.703}
+        - {x: 301, y: 330.5}
+      - - {x: 296.07028, y: -50.582706}
+        - {x: 296.07028, y: -232.3872}
+        - {x: 298.99997, y: -235.31955}
+        - {x: 301, y: -235.31955}
+        - {x: 301, y: -46.184208}
+        - {x: 300.4648, y: -46.184208}
+      - - {x: 296.07028, y: 310.09396}
+        - {x: 296.07028, y: 229.45488}
+        - {x: 300.4648, y: 225.05638}
+        - {x: 301, y: 225.05638}
+        - {x: 301, y: 313.0263}
+        - {x: 298.99997, y: 313.0263}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cef0828303fe1b2e0800000000000000
+      internalID: -2111643759880433684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frog_parry_4
+      rect:
+        serializedVersion: 2
+        x: 2399
+        y: 0
+        width: 582
+        height: 780
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 120.43548, y: 390}
+        - {x: -209.15437, y: 390}
+        - {x: -291, y: 297.63156}
+        - {x: -291, y: 148.0827}
+        - {x: -215.01375, y: 90.90225}
+        - {x: -81.71296, y: 92.368416}
+        - {x: -185.71687, y: 76.2406}
+        - {x: -267.7481, y: 19.06015}
+        - {x: -291, y: -102.63158}
+        - {x: -291, y: -302.03006}
+        - {x: -286.79108, y: -340.15036}
+        - {x: -250.17, y: -390}
+        - {x: 206.86127, y: -390}
+        - {x: 291, y: -205.26315}
+        - {x: 291, y: 303.49625}
+        - {x: 212.72064, y: 370.93985}
+      - - {x: -291, y: 153.94736}
+        - {x: -291, y: 26.390976}
+        - {x: -288.25592, y: 26.390976}
+        - {x: -285.32623, y: 29.323307}
+        - {x: -285.32623, y: 151.01503}
+        - {x: -288.25592, y: 153.94736}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83e2dd464bf16d760800000000000000
+      internalID: 7482202690569449016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

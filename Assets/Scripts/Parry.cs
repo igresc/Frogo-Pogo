@@ -25,7 +25,11 @@ public class Parry : MonoBehaviour
 	private float defaultTimeFixedValue;
 	private Rigidbody2D rb;
 
-	// Start is called before the first frame update
+	public Animator frogo;
+	//frogo.SetBool("IsParrying", false); Activar i desactivar la animacio
+	//(ns si hauras de mirar de desactivar la resta d-animacions)
+
+
 	void Start()
 	{
 		defaultTimeFixedValue = Time.fixedDeltaTime;
@@ -38,11 +42,13 @@ public class Parry : MonoBehaviour
 	{
 		if((isParryMode && Input.GetKeyDown(KeyCode.Space)) || isParryDash)
 		{
+			
 			isParryDash = true;
 			ParryAction();
 		}
 		else
 		{
+			
 			ParryMode();
 		}
 	}
@@ -111,6 +117,7 @@ public class Parry : MonoBehaviour
 	{
 		if(isParryMode)
 		{
+			
 			SuccessfullParry();
 		}
 
@@ -134,13 +141,15 @@ public class Parry : MonoBehaviour
 
 	void ExitParryMode()
 	{
+		//frogo.SetBool("IsParrying", false);
 		parryTime = startParryTime;
-		Time.timeScale = 1f;
+		//Time.timeScale = 1f;
 		Time.fixedDeltaTime = defaultTimeFixedValue;
 	}
 
 	void SuccessfullParry()
 	{
+		//frogo.SetBool("IsParrying", true);
 		timer.AddParryTime();
 		score.AddScore();
 		Debug.Log("aquiii" + enemy.name);

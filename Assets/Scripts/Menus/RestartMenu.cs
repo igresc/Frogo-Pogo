@@ -16,7 +16,7 @@ public class RestartMenu : MonoBehaviour
 	public void RestartGame()
 	{
 		Time.timeScale = 1f;
-		SceneManager.LoadScene("SampleScene");
+		SceneManager.LoadScene("Level");
 	}
 	public void QuitGame()
 	{

@@ -26,7 +26,7 @@ public class PlayerMovement : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		if(Input.GetButtonDown("AltJump"))
+		if (Input.GetButtonDown("AltJump"))
 		{
 			isJumping = true;
 			//m_Rigidbody2D.velocity = Vector2.up * controller.m_JumpForce;

@@ -51,7 +51,7 @@ public class WormAI : MonoBehaviour
 
 	void OnTriggerEnter2D(Collider2D collision)
 	{
-		if(collision.gameObject == trophy)
+		if (collision.gameObject.CompareTag("Trophy"))
 		{
 			player.GetComponent<Parry>().FailedlParry();
 			//parry.FailedlParry();
@@ -59,7 +59,7 @@ public class WormAI : MonoBehaviour
 		}
 	}
 
-		private void Flip()
+	private void Flip()
 	{
 		if(transform.position.x > player.transform.position.x)
 		{

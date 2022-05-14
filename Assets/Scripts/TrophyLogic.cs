@@ -11,9 +11,15 @@ public class TrophyLogic : MonoBehaviour
 	public int removeScore = 100;
 
 	public ParticleSystem addParticles;
+	public Animator scoreAnim;
 
+	float startTimer = 1;
+	bool isAdding, isRemoving;
+
+	Color defaultColor;
 	private void Start()
 	{
+		defaultColor = scoreText.color;
 		score = 0;
 	}
 	private void Update()
@@ -27,20 +33,48 @@ public class TrophyLogic : MonoBehaviour
 		//{
 		//	AddScore();
 		//}
+		//if (Input.GetKeyDown(KeyCode.Y))
+		//{
+		//	RemoveScore();
+		//}
+
+		if (isAdding || isRemoving) 
+		{
+			startTimer -= Time.deltaTime;
+			if (startTimer <= 0)
+			{
+				scoreText.color = defaultColor;
+				scoreAnim.SetBool("Add", false);
+				isAdding = false;
+				isRemoving = false;
+				startTimer = 1;
+			}
+			else 
+			{
+				scoreAnim.SetBool("Add", true);
+				if (isRemoving) { scoreText.color = new Color(255, 0, 0, 255); }
+				if (isAdding) { scoreText.color = new Color(0, 255, 0, 255); }
+				
+			}
+		}
+		
 		scoreText.text = System.Convert.ToString(score);
 	}
 	public void AddScore()
 	{
 		score += addScore;
+		isAdding = true;
 		Instantiate(addParticles);
 	}
 	public void RemoveScore()
 	{
 		score -= removeScore;
+		isRemoving = true;
+		scoreText.color = new Color(255, 0, 0, 255);
 	}
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
-		if(collision.CompareTag("Enemy"))
+		if(collision.gameObject.CompareTag("Enemy"))
 		{
 			RemoveScore();
 		}

@@ -213,7 +213,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 3.88
+  m_Radius: 4.96
 --- !u!114 &5780632803445007211
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -281,6 +281,7 @@ MonoBehaviour:
   isParryDash: 0
   startParryTime: 0
   midParryTime: 0
+  frogo: {fileID: 1637398959220885465}
 --- !u!95 &1637398959220885465
 Animator:
   serializedVersion: 3

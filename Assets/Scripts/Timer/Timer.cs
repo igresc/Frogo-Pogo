@@ -8,6 +8,8 @@ public class Timer : MonoBehaviour
 	[SerializeField] private float timeValue = 90;
 	[SerializeField] private const float parryAddedTime = 5; //Same time to add or to sustract
 
+	public Animator timer;
+
 	Color defaultColor;
 	// Update is called once per frame
 	void Start()
@@ -40,16 +42,23 @@ public class Timer : MonoBehaviour
 
 		timeText.text = string.Format("{00:00}:{1:00}", minutes, seconds);
 
-		if(seconds <= 5 && minutes <= 0)
+		if (seconds <= 10 && minutes <= 0)
 		{
 			timeText.color = new Color(255, 0, 0, 255);
+			timer.SetBool("Finishing", true);
 		}
-		else timeText.color = defaultColor;
+		else
+		{
+			timeText.color = defaultColor;
+			timer.SetBool("Finishing", false);
+		}
 	}
 
 	public void AddParryTime()
 	{
 		timeValue += parryAddedTime;
+		timeText.color = new Color(0, 255, 0, 255);
+		timer.SetBool("Finishing", true);
 	}
 
 	public void RemoveParryTime()
