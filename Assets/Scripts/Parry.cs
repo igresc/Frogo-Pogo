@@ -38,6 +38,7 @@ public class Parry : MonoBehaviour
 	{
 		if((isParryMode && Input.GetKeyDown(KeyCode.Space)) || isParryDash)
 		{
+
 			isParryDash = true;
 			ParryAction();
 		}
@@ -52,21 +53,6 @@ public class Parry : MonoBehaviour
 	{
 		enemy = collision.gameObject;
 		Debug.Log(enemy.name);
-		//if(collision.CompareTag("Enemy"))
-		//{
-		//	isParryMode = true;
-		//	Time.timeScale = slowDownTime;
-		//	Time.fixedDeltaTime = Time.timeScale * 0.02f;
-		//	if(isParryMode)
-		//	{
-		//		ParryMode();
-		//	}
-		//	else
-		//	{
-		//		//Take_Damage();
-		//	}
-		//}
-		//else
 		if(collision.CompareTag("Parryable"))
 		{
 			enemy = collision.transform.parent.gameObject;
@@ -80,8 +66,6 @@ public class Parry : MonoBehaviour
 		isParryMode = false;
 		ExitParryMode();
 	}
-
-
 
 	public void ParryMode()
 	{

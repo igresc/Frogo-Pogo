@@ -3,23 +3,24 @@ using UnityEngine;
 public class MoscoAI : MonoBehaviour
 {
 	public float speed;
-	public float lineOfSight = 5;
-	public bool isChasing;
+	public bool is_IA_enabled = true;
 	private GameObject trophy;
-	private Vector2 number;
-	private float movingTime = 2;
 
 	public ParticleSystem deathParticles;
 
 	void Start()
 	{
-		trophy = GameObject.FindGameObjectWithTag("Trophy");
+		if(is_IA_enabled)
+			trophy = GameObject.FindGameObjectWithTag("Trophy");
 	}
 
 	void Update()
 	{
-		ChaseTrophy();
-		Flip();
+		if(is_IA_enabled)
+		{
+			ChaseTrophy();
+			Flip();
+		}
 	}
 
 	private void ChaseTrophy()
