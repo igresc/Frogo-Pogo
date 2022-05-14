@@ -6,15 +6,17 @@ public class MoscoAI : MonoBehaviour
 	public float lineOfSight = 5;
 	public bool isChasing;
 	private GameObject trophy;
+	private GameObject player;
 	private Vector2 number;
 
 	public ParticleSystem deathParticles;
-	public Parry parry;
+	//public Parry parry;
 
 	void Start()
 	{
 		trophy = GameObject.FindGameObjectWithTag("Trophy");
-		
+		player = GameObject.FindGameObjectWithTag("Player");
+
 	}
 
 	void Update()
@@ -33,7 +35,8 @@ public class MoscoAI : MonoBehaviour
 	{
 		if (collision.gameObject == trophy)
 		{
-			parry.FailedlParry();
+			player.GetComponent<Parry>().FailedlParry();
+			//parry.FailedlParry();
 			Dead();
 		}
 	}

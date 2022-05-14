@@ -14,12 +14,14 @@ public class WormAI : MonoBehaviour
 	public Vector2 parrySpeed;
 	public ParticleSystem deathParticles;
 
-	public Parry parry;
+	//public Parry parry;
 
 	void Start()
 	{
 		trophy = GameObject.FindGameObjectWithTag("Trophy");
+		player = GameObject.FindGameObjectWithTag("Player");
 		rb = GetComponent<Rigidbody2D>();
+		
 		jumpDistance = 0.5f;
 	} 
 	void Update()
@@ -51,7 +53,8 @@ public class WormAI : MonoBehaviour
 	{
 		if(collision.gameObject == trophy)
 		{
-			parry.FailedlParry();
+			player.GetComponent<Parry>().FailedlParry();
+			//parry.FailedlParry();
 			Dead();
 		}
 	}
