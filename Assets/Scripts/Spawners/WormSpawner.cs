@@ -21,34 +21,24 @@ public class WormSpawner : MonoBehaviour
 	}
 	void Update()
 	{
-		
 		Spawn();
-		
 	}
 
 	void Spawn()
 	{
-		Debug.Log("Spawning");
-		if (innerCount >= maxCount)
+		Vector2 pos = new Vector2(Random.Range(transform.position.x - 2, transform.position.x + 2), transform.position.y);
+		number = Random.Range(0, 2);
+		Debug.Log(number);
+		switch (number)
 		{
-			maxCount += 2;
+			case 0:
+				Instantiate(Worm[0], pos, Quaternion.identity);
+				break;
+			case 1:
+				Instantiate(Worm[1], pos, Quaternion.identity);
+				break;
 		}
-		else
-		{
-			Vector2 pos = new Vector2(Random.Range(transform.position.x - 2, transform.position.x + 2), transform.position.y);
-			number = Random.Range(0, 2);
-			Debug.Log(number);
-			switch (number)
-			{
-				case 0:
-					Instantiate(Worm[0], pos, Quaternion.identity);
-					break;
-				case 1:
-					Instantiate(Worm[1], pos, Quaternion.identity);
-					break;
-			}
-		}
-		innerCount++;
+		//Time.timeSinceLevelLoad;
 	}
 
 	void OnDrawGizmosSelected()

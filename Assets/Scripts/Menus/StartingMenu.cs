@@ -5,31 +5,19 @@ using UnityEngine.UI;
 
 public class StartingMenu : MonoBehaviour
 {
-	[SerializeField] private Text text;
-	[SerializeField] private GameObject StartingPanel;
-	int countdown;
-	float timeDown = 5;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-		countdown = 3;
-		text.text = System.Convert.ToString(countdown);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-		Invoke("Countdown", 1);
-		text.text = System.Convert.ToString(countdown);
-		if (countdown <= 0) 
-		{
-			StartingPanel.SetActive(false);
-		}
-	}
-	void CountDown() 
+	[SerializeField] private GameObject StartScreen;
+	bool isActive = true;
+	void Update()
 	{
-		Debug.Log("Time");
-		countdown--;
+		if (Input.GetKey(KeyCode.Space))
+		{
+			Time.timeScale = 1f;
+			StartScreen.SetActive(false);
+			isActive = false;
+		}
+		else if (isActive == true) 
+		{
+			Time.timeScale = 0f;
+		}
 	}
 }

@@ -27,6 +27,7 @@ public class WormAI : MonoBehaviour
 	void Update()
 	{
 		ChaseTrophy();
+		Flip();
 	}
 	private void ChaseTrophy()
 	{

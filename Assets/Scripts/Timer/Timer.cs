@@ -4,6 +4,7 @@ using UnityEngine.UI;
 public class Timer : MonoBehaviour
 {
 	[SerializeField] private Text timeText;
+	[SerializeField] private GameObject RestartMenu;
 
 	[SerializeField] private float timeValue = 90;
 	[SerializeField] private const float parryAddedTime = 5; //Same time to add or to sustract
@@ -20,11 +21,14 @@ public class Timer : MonoBehaviour
 	{
 		if(timeValue > 0)
 		{
+			Time.timeScale = 1f;
 			timeValue -= Time.deltaTime;
 		}
 		else
 		{
 			timeValue = 0;
+			Time.timeScale = 0f;
+			RestartMenu.SetActive(true);
 		}
 		DisplayTime(timeValue);
 

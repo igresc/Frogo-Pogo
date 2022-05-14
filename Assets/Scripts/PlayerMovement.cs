@@ -29,6 +29,7 @@ public class PlayerMovement : MonoBehaviour
 		if (Input.GetButtonDown("AltJump"))
 		{
 			isJumping = true;
+			frogo.SetBool("IsJumping", true);
 			//m_Rigidbody2D.velocity = Vector2.up * controller.m_JumpForce;
 		}
 
