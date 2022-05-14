@@ -137,8 +137,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1515013179
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 5208928958187830384, guid: 02af6e47d846a784c8a121f7a56cc36e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -234,6 +234,8 @@ MonoBehaviour:
     m_Bits: 64
   m_GroundCheck: {fileID: 5305661273901916862}
   m_CeilingCheck: {fileID: 1576615311185870647}
+  fallMultiplier: 6
+  lowJumpMultiplier: 5.5
   m_FacingRight: 1
   OnLandEvent:
     m_PersistentCalls:
@@ -253,8 +255,6 @@ MonoBehaviour:
   controller: {fileID: 5780632803445007211}
   parryController: {fileID: 3664183681016681437}
   runSpeed: 40
-  fallMultiplier: 6
-  lowJumpMultiplier: 5.5
   frogo: {fileID: 1637398959220885465}
   isJumping: 0
 --- !u!114 &3664183681016681437
