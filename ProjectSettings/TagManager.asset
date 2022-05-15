@@ -48,9 +48,12 @@ TagManager:
   - name: BG
     uniqueID: 1968224281
     locked: 0
-  - name: Player
-    uniqueID: 1515013179
+  - name: Decor
+    uniqueID: 1186992169
     locked: 0
   - name: Enemies
     uniqueID: 2566226427
+    locked: 0
+  - name: Player
+    uniqueID: 1515013179
     locked: 0
