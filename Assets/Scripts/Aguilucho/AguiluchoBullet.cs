@@ -19,4 +19,15 @@ public class AguiluchoBullet : MonoBehaviour
 	{
 		transform.position = Vector2.MoveTowards(transform.position, Player.transform.position, speed * Time.deltaTime);
 	}
+	private void Flip()
+	{
+		if (transform.position.x > Player.transform.position.x)
+		{
+			transform.rotation = Quaternion.Euler(0, 0, 0);
+		}
+		else
+		{
+			transform.rotation = Quaternion.Euler(0, 180, 0);
+		}
+	}
 }

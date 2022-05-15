@@ -14,14 +14,13 @@ public class PauseMenu : MonoBehaviour
 	{
 		if(Input.GetKeyDown(KeyCode.Escape))
 		{
-			if(GameIsPaused)
+			if (GameIsPaused)
 			{
 				Resume();
 			}
 			else
 			{
 				Pause();
-				//StartingScreen.SetActive(false);
 			}
 		}
 	}

@@ -7,17 +7,21 @@ public class StartingMenu : MonoBehaviour
 {
 	[SerializeField] private GameObject StartScreen;
 	bool isActive = true;
+	
 	void Update()
 	{
-		if (Input.GetKey(KeyCode.Space))
+		if (StartScreen.activeSelf) 
 		{
-			Time.timeScale = 1f;
-			StartScreen.SetActive(false);
-			isActive = false;
-		}
-		else if (isActive == true) 
-		{
-			Time.timeScale = 0f;
+			if (Input.GetKey(KeyCode.Space))
+			{
+				Time.timeScale = 1f;
+				StartScreen.SetActive(false);
+				isActive = false;
+			}
+			else if (isActive == true)
+			{
+				Time.timeScale = 0f;
+			}
 		}
 	}
 }

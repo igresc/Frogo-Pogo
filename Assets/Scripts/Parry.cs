@@ -27,6 +27,7 @@ public class Parry : MonoBehaviour
 	private Rigidbody2D rb;
 
 	public Animator frogo;
+	public AudioSource parrySound;
 	//frogo.SetBool("IsParrying", false); Activar i desactivar la animacio
 	//(ns si hauras de mirar de desactivar la resta d-animacions)
 
@@ -172,6 +173,7 @@ public class Parry : MonoBehaviour
 	private IEnumerator ParryAnimation()
 	{
 		frogo.SetBool("IsParrying", true);
+		parrySound.Play();
 		yield return new WaitForSeconds(0.4f);
 		frogo.SetBool("IsParrying", false);
 	}

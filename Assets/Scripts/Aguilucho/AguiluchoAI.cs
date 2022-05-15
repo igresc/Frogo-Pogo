@@ -20,8 +20,11 @@ public class AguiluchoAI : MonoBehaviour
 
 	private Vector2 actualPos;
 
+	private GameObject Player;
+
 	private void Start()
 	{
+		Player = GameObject.FindGameObjectWithTag("Player");
 		waitTime = startWaitTime;
 	}
 
@@ -49,7 +52,18 @@ public class AguiluchoAI : MonoBehaviour
 				waitTime -= Time.deltaTime;
 			}
 		}
+		Flip();
 	}
-
+	private void Flip()
+	{
+		if (transform.position.x > Player.transform.position.x)
+		{
+			transform.rotation = Quaternion.Euler(0, 0, 0);
+		}
+		else
+		{
+			transform.rotation = Quaternion.Euler(0, 180, 0);
+		}
+	}
 
 }

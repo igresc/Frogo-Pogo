@@ -13,6 +13,8 @@ public class WormAI : MonoBehaviour
 	public Vector2 parrySpeed;
 	public ParticleSystem deathParticles;
 
+	public AudioSource spawnSound;
+
 	void Start()
 	{
 		trophy = GameObject.FindGameObjectWithTag("Trophy");
@@ -20,6 +22,7 @@ public class WormAI : MonoBehaviour
 		rb = GetComponent<Rigidbody2D>();
 
 		jumpDistance = 0.5f;
+		spawnSound.Play();
 	}
 
 	void Update()

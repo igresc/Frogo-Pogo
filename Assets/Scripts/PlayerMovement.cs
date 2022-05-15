@@ -20,6 +20,11 @@ public class PlayerMovement : MonoBehaviour
 	public bool isJumping;
 
 	Rigidbody2D m_Rigidbody2D;
+
+	public AudioSource walkSound;
+	public AudioSource jumpSound;
+	float audioTimer = 0.5f;
+	bool canJump = true;
 	void Awake()
 	{
 		m_Rigidbody2D = GetComponent<Rigidbody2D>();
@@ -28,16 +33,21 @@ public class PlayerMovement : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		if(Input.GetButtonDown("AltJump"))
+		if (Input.GetButtonDown("AltJump") && canJump)
 		{
 			isJumping = true;
+			jumpSound.pitch = Random.Range(0.7f, 1);
+			jumpSound.Play();
+			canJump = false;
+
 		}
 
 		if(controller.m_Grounded || parryController.isParryDash)
 		{
 			frogo.SetBool("IsJumping", false);
+			canJump = true;
 		}
-		else
+		else 
 		{
 			frogo.SetBool("IsJumping", true);
 		}
@@ -61,7 +71,7 @@ public class PlayerMovement : MonoBehaviour
 		if(isJumping)
 		{
 			isJumping = false;
-			controller.Jump();
+			controller.Jump(); 
 		}
 	}
 }

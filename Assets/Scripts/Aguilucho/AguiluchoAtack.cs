@@ -14,11 +14,15 @@ public class AguiluchoAtack : MonoBehaviour
 
 	private float actualCooldownAttack;
 
+	public SpriteRenderer beeSkin;
 
+	Color defaultBeeSkin;
+
+	public AudioSource beeShoot;
 	void Start()
 	{
 		actualCooldownAttack = 0;
-
+		defaultBeeSkin = beeSkin.color;
 	}
 
 	// Update is called once per frame
@@ -38,11 +42,12 @@ public class AguiluchoAtack : MonoBehaviour
 				if(actualCooldownAttack <= 0)
 				{
 					Invoke("launchBullet", 0.5f);
+					//beeSkin.color = new Color(255, 0, 0, 255);
 					//animator.Play("Attack");
 					actualCooldownAttack = cooldownAttack;
+					beeShoot.Play();
 				}
 			}
-
 		}
 	}
 
