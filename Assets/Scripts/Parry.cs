@@ -45,7 +45,7 @@ public class Parry : MonoBehaviour
 	private void Update()
 	{
 		parryParticles.transform.position = transform.position;
-		if ((isParryMode && Input.GetKeyDown(KeyCode.Space)) || isParryDash)
+		if((isParryMode && Input.GetKeyDown(KeyCode.Space)) || isParryDash)
 		{
 			isParryDash = true;
 			ParryAction();
@@ -155,19 +155,19 @@ public class Parry : MonoBehaviour
 		timer.AddParryTime();
 		score.AddScore();
 		//Debug.Log("aquiii" + enemy.name);
-		if (enemy != null)
+		if(enemy != null)
 		{
-			if (enemy.name.Contains("Mosco"))
+			if(enemy.name.Contains("Mosco"))
 			{
 				enemy.GetComponent<MoscoAI>().Dead();
 			}
 
-			if (enemy.name.Contains("Worm"))
+			if(enemy.name.Contains("Worm"))
 			{
 				enemy.GetComponent<WormAI>().Dead();
 			}
 
-			if (enemy.name.Contains("Bullet"))
+			if(enemy.name.Contains("Bullet"))
 			{
 				enemy.GetComponent<AguiluchoBullet>().Dead();
 			}
@@ -190,3 +190,4 @@ public class Parry : MonoBehaviour
 		frogo.SetBool("IsParrying", false);
 	}
 }
+
