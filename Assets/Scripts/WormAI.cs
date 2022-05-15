@@ -15,6 +15,11 @@ public class WormAI : MonoBehaviour
 
 	public AudioSource spawnSound;
 
+	public int removeScore;
+	public int addScore;
+	public float addTime;
+	public float removeTime;
+
 	void Start()
 	{
 		trophy = GameObject.FindGameObjectWithTag("Trophy");

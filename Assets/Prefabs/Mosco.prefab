@@ -121,6 +121,10 @@ MonoBehaviour:
   isChasing: 0
   deathParticles: {fileID: 3018228628753384751, guid: 6804a6c884266dc4d8c2856bc446d04c, type: 3}
   spawnSound: {fileID: 3587815039936559669}
+  removeScore: 20
+  addScore: 30
+  addTime: 2
+  removeTime: 3
 --- !u!50 &4081025415815138334
 Rigidbody2D:
   serializedVersion: 4

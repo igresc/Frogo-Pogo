@@ -7,8 +7,6 @@ public class Timer : MonoBehaviour
 	[SerializeField] private GameObject RestartMenu;
 
 	[SerializeField] private float timeValue = 90;
-	[SerializeField] private const float parryAddedTime = 5; //Same time to add or to sustract
-
 	public Animator timer;
 
 	Color defaultColor;
@@ -58,15 +56,15 @@ public class Timer : MonoBehaviour
 		}
 	}
 
-	public void AddParryTime()
+	public void AddTime(float addTime)
 	{
-		timeValue += parryAddedTime;
+		timeValue += addTime;
 		timeText.color = new Color(0, 255, 0, 255);
 		timer.SetBool("Finishing", true);
 	}
 
-	public void RemoveParryTime()
+	public void RemoveTime(float removeTime)
 	{
-		timeValue -= parryAddedTime;
+		timeValue -= removeTime;
 	}
 }

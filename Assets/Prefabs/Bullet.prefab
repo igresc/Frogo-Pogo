@@ -64,7 +64,7 @@ GameObject:
   - component: {fileID: 2705988050925551008}
   m_Layer: 0
   m_Name: Bullet
-  m_TagString: Enemy
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -188,6 +188,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 7
   lifeTime: 3
+  removeScore: 5
+  addScore: 10
+  addTime: 0.2
+  removeTime: 1
   deadParticles: {fileID: 3018228628753384751, guid: 6804a6c884266dc4d8c2856bc446d04c, type: 3}
 --- !u!50 &8103380884526488768
 Rigidbody2D:

@@ -10,6 +10,12 @@ public class MoscoAI : MonoBehaviour
 
 	public ParticleSystem deathParticles;
 	public AudioSource spawnSound;
+
+	public int removeScore;
+	public int addScore;
+	public float addTime;
+	public float removeTime;
+
 	void Start()
 	{
 		trophy = GameObject.FindGameObjectWithTag("Trophy");

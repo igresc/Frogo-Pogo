@@ -7,6 +7,11 @@ public class AguiluchoBullet : MonoBehaviour
 	public float speed = 20;
 	public float lifeTime = 2;
 
+	public int removeScore;
+	public int addScore;
+	public float addTime;
+	public float removeTime;
+
 	private GameObject Player;
 
 	public ParticleSystem deadParticles;
@@ -19,7 +24,6 @@ public class AguiluchoBullet : MonoBehaviour
 
 	private void Update()
 	{
-		
 		transform.position = Vector2.MoveTowards(transform.position, Player.transform.position, speed * Time.deltaTime);
 		Flip();
 		if (lifeTime <= 0)

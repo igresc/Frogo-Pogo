@@ -100,10 +100,9 @@ MonoBehaviour:
   scoreText: {fileID: 0}
   parry: {fileID: 0}
   score: 0
-  addScore: 50
-  removeScore: 100
+  lottusRemoveScore: 50
   addParticles: {fileID: 1512575004182767549, guid: 4ce2db48945091b409d25e43698419db, type: 3}
-  scoreAnim: {fileID: 0}
+  scoreAnim: {fileID: 7555013710343018210}
 --- !u!58 &541596111796909026
 CircleCollider2D:
   m_ObjectHideFlags: 0

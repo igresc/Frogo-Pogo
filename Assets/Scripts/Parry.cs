@@ -152,24 +152,31 @@ public class Parry : MonoBehaviour
 	void SuccessfullParry()
 	{
 		StartCoroutine(ParryAnimation());
-		timer.AddParryTime();
-		score.AddScore();
 		//Debug.Log("aquiii" + enemy.name);
 		if (enemy != null)
 		{
 			if (enemy.name.Contains("Mosco"))
 			{
-				enemy.GetComponent<MoscoAI>().Dead();
+				MoscoAI mosco = enemy.GetComponent<MoscoAI>();
+				mosco.Dead();
+				timer.AddTime(mosco.addTime);
+				score.AddScore(mosco.addScore);
 			}
 
 			if (enemy.name.Contains("Worm"))
 			{
-				enemy.GetComponent<WormAI>().Dead();
+				WormAI worm = enemy.GetComponent<WormAI>();
+				worm.Dead();
+				timer.AddTime(worm.addTime);
+				score.AddScore(worm.addScore);
 			}
 
 			if (enemy.name.Contains("Bullet"))
 			{
-				enemy.GetComponent<AguiluchoBullet>().Dead();
+				AguiluchoBullet aguilucho = enemy.GetComponent<AguiluchoBullet>();
+				aguilucho.Dead();
+				timer.AddTime(aguilucho.addTime);
+				score.AddScore(aguilucho.addScore);
 			}
 		}
 
@@ -177,8 +184,29 @@ public class Parry : MonoBehaviour
 
 	public void FailedlParry()
 	{
-		score.RemoveScore();
-		timer.RemoveParryTime();
+		if (enemy != null)
+		{
+			if (enemy.name.Contains("Mosco"))
+			{
+				MoscoAI mosco = enemy.GetComponent<MoscoAI>();
+				timer.RemoveTime(mosco.removeTime);
+				score.RemoveScore(mosco.removeScore);
+			}
+
+			if (enemy.name.Contains("Worm"))
+			{
+				WormAI worm = enemy.GetComponent<WormAI>();
+				timer.RemoveTime(worm.removeTime);
+				score.RemoveScore(worm.removeScore);
+			}
+
+			if (enemy.name.Contains("Bullet"))
+			{
+				AguiluchoBullet aguilucho = enemy.GetComponent<AguiluchoBullet>();
+				timer.RemoveTime(aguilucho.removeTime);
+				score.RemoveScore(aguilucho.removeScore);
+			}
+		}
 	}
 
 	private IEnumerator ParryAnimation()

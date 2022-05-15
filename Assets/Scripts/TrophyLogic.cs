@@ -3,12 +3,14 @@ using UnityEngine.UI;
 
 public class TrophyLogic : MonoBehaviour
 {
+	public Timer timer;
+
 	public Text scoreText;
 	public Parry parry;
 	public int score;
 
-	public int addScore = 50;
-	public int removeScore = 100;
+	[SerializeField] private const float removeTime = 5; 
+	public const int lottusRemoveScore = 50;
 
 	public ParticleSystem addParticles;
 	public Animator scoreAnim;
@@ -60,23 +62,29 @@ public class TrophyLogic : MonoBehaviour
 
 		scoreText.text = System.Convert.ToString(score);
 	}
-	public void AddScore()
+
+	public void AddScore(int addScore)
 	{
 		score += addScore;
 		isAdding = true;
+		addParticles.transform.position = transform.position;
 		Instantiate(addParticles);
 	}
-	public void RemoveScore()
+
+	public void RemoveScore(int removeScore)
 	{
 		score -= removeScore;
 		isRemoving = true;
 		scoreText.color = new Color(255, 0, 0, 255);
 	}
+
+	// Flor collision
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
 		if(collision.gameObject.CompareTag("Enemy"))
 		{
-			RemoveScore();
+			RemoveScore(lottusRemoveScore);
+			timer.RemoveTime(removeTime);
 		}
 	}
 }
