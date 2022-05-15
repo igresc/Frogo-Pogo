@@ -8,6 +8,8 @@ public class SpawnControl : MonoBehaviour
 	private bool canSpawn;
 	private float time;
 
+	public ParticleSystem spawnParticles;
+
 	private void Start()
 	{
 		time = 0;
@@ -35,6 +37,8 @@ public class SpawnControl : MonoBehaviour
 		
 		if(canSpawn)
 		{
+			spawnParticles.transform.position = Spawners[number].transform.position;
+			Instantiate(spawnParticles);
 			StartCoroutine(CooldownSpawns(cooldown));
 			Spawners[number].SetActive(true);
 		}

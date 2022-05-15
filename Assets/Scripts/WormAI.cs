@@ -27,6 +27,7 @@ public class WormAI : MonoBehaviour
 
 	void Update()
 	{
+		
 		ChaseTrophy();
 		Flip();
 	}
@@ -73,7 +74,8 @@ public class WormAI : MonoBehaviour
 
 	public void Dead()
 	{
-		Instantiate(deathParticles, transform.position, Quaternion.identity);
+		deathParticles.transform.position = transform.position;
+		Instantiate(deathParticles);
 		Destroy(gameObject);
 	}
 }

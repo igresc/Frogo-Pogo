@@ -2874,6 +2874,7 @@ MonoBehaviour:
   - {fileID: 805379755}
   - {fileID: 1495022542}
   - {fileID: 592857528}
+  spawnParticles: {fileID: 3618866901664073810, guid: 0958820682db1554b9937586c4813525, type: 3}
 --- !u!1 &1823420140
 GameObject:
   m_ObjectHideFlags: 0

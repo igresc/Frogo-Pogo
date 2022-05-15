@@ -52,7 +52,8 @@ public class MoscoAI : MonoBehaviour
 
 	public void Dead()
 	{
-		Instantiate(deathParticles, transform.position, Quaternion.identity);
+		deathParticles.transform.position = transform.position;
+		Instantiate(deathParticles);
 		Destroy(gameObject);
 	}
 

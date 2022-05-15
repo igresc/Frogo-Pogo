@@ -59,7 +59,7 @@ public class Parry : MonoBehaviour
 	void OnTriggerEnter2D(Collider2D collision)
 	{
 		enemy = collision.gameObject;
-		Debug.Log(enemy.name);
+		//Debug.Log(enemy.name);
 		//if(collision.CompareTag("Enemy"))
 		//{
 		//	isParryMode = true;

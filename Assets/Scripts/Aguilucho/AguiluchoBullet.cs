@@ -13,19 +13,20 @@ public class AguiluchoBullet : MonoBehaviour
 
 	private void Start()
 	{
-		Destroy(gameObject, lifeTime);
+		//Destroy(gameObject, lifeTime);
 		Player = GameObject.FindGameObjectWithTag("Player");
 	}
 
 	private void Update()
 	{
-		deadParticles.transform.position = transform.position;
+		
 		transform.position = Vector2.MoveTowards(transform.position, Player.transform.position, speed * Time.deltaTime);
 		Flip();
-		if (lifeTime <= 0) 
+		if (lifeTime <= 0)
 		{
-			Instantiate(deadParticles);
+			Dead();
 		}
+		else { lifeTime -= Time.deltaTime; }
 	}
 	private void Flip()
 	{
@@ -41,7 +42,8 @@ public class AguiluchoBullet : MonoBehaviour
 
 	public void Dead()
 	{
-		//Instantiate(deathParticles, transform.position, Quaternion.identity);
-		Destroy(gameObject);
+		deadParticles.transform.position = transform.position;
+		Instantiate(deadParticles);
+		Destroy(this.gameObject);
 	}
 }

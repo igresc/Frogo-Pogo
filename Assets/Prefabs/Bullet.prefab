@@ -173,6 +173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6623ca2922ab6144b0b2b5219f09362, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  variables: {fileID: 2851041940158603527}
 --- !u!114 &2851041940158603527
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -187,7 +188,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 7
   lifeTime: 3
-  deadParticles: {fileID: 963646080371934986, guid: 3f39f43ad4acc204e8dd758f8b24a24d, type: 3}
+  deadParticles: {fileID: 3018228628753384751, guid: 6804a6c884266dc4d8c2856bc446d04c, type: 3}
 --- !u!50 &8103380884526488768
 Rigidbody2D:
   serializedVersion: 4
