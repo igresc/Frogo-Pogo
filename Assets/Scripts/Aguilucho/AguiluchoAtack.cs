@@ -19,16 +19,30 @@ public class AguiluchoAtack : MonoBehaviour
 	Color defaultBeeSkin;
 
 	public AudioSource beeShoot;
+
+	public bool isStuned;
+	public float timeStuned;
+	float defaultTimeStun;
 	void Start()
 	{
 		actualCooldownAttack = 0;
 		defaultBeeSkin = beeSkin.color;
+		defaultTimeStun = timeStuned;
 	}
 
 	// Update is called once per frame
 	void Update()
 	{
 		actualCooldownAttack -= Time.deltaTime;
+		if (isStuned)
+		{
+			timeStuned -= Time.deltaTime;
+		}
+		else
+		{
+			isStuned = false;
+			timeStuned = defaultTimeStun;
+		}
 	}
 
 	private void FixedUpdate()
@@ -39,7 +53,7 @@ public class AguiluchoAtack : MonoBehaviour
 		{
 			if(hit2D.collider.CompareTag("Player"))
 			{
-				if(actualCooldownAttack <= 0)
+				if(actualCooldownAttack <= 0 && !isStuned)
 				{
 					Invoke("launchBullet", 0.5f);
 					//beeSkin.color = new Color(255, 0, 0, 255);
