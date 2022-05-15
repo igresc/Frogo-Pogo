@@ -1468,7 +1468,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4837308314270285188, guid: 9bef121d3e56b3f4fbe585880571afe3, type: 3}
       propertyPath: m_Name
-      value: Trophy (1)
+      value: Trophy
       objectReference: {fileID: 0}
     - target: {fileID: 4837308314270285242, guid: 9bef121d3e56b3f4fbe585880571afe3, type: 3}
       propertyPath: m_RootOrder

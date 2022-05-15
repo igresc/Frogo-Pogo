@@ -290,6 +290,7 @@ MonoBehaviour:
   midParryTime: 0
   frogo: {fileID: 1637398959220885465}
   parrySound: {fileID: 8519772453775784153}
+  parryParticles: {fileID: 4727699250246528522, guid: 60fdfe1fd69e9d64b9d0883d51ff6f97, type: 3}
 --- !u!114 &5299463059236764009
 MonoBehaviour:
   m_ObjectHideFlags: 0

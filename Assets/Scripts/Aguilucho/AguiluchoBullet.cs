@@ -9,6 +9,8 @@ public class AguiluchoBullet : MonoBehaviour
 
 	private GameObject Player;
 
+	public ParticleSystem deadParticles;
+
 	private void Start()
 	{
 		Destroy(gameObject, lifeTime);
@@ -17,7 +19,13 @@ public class AguiluchoBullet : MonoBehaviour
 
 	private void Update()
 	{
+		deadParticles.transform.position = transform.position;
 		transform.position = Vector2.MoveTowards(transform.position, Player.transform.position, speed * Time.deltaTime);
+		Flip();
+		if (lifeTime <= 0) 
+		{
+			Instantiate(deadParticles);
+		}
 	}
 	private void Flip()
 	{

@@ -31,6 +31,8 @@ public class Parry : MonoBehaviour
 	//frogo.SetBool("IsParrying", false); Activar i desactivar la animacio
 	//(ns si hauras de mirar de desactivar la resta d-animacions)
 
+	public ParticleSystem parryParticles;
+
 
 	void Start()
 	{
@@ -42,7 +44,8 @@ public class Parry : MonoBehaviour
 
 	private void Update()
 	{
-		if((isParryMode && Input.GetKeyDown(KeyCode.Space)) || isParryDash)
+		parryParticles.transform.position = transform.position;
+		if ((isParryMode && Input.GetKeyDown(KeyCode.Space)) || isParryDash)
 		{
 			isParryDash = true;
 			ParryAction();
@@ -174,6 +177,7 @@ public class Parry : MonoBehaviour
 	{
 		frogo.SetBool("IsParrying", true);
 		parrySound.Play();
+		Instantiate(parryParticles);
 		yield return new WaitForSeconds(0.4f);
 		frogo.SetBool("IsParrying", false);
 	}
