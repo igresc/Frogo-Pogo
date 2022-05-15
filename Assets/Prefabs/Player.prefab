@@ -76,6 +76,7 @@ GameObject:
   - component: {fileID: 5780632803445007211}
   - component: {fileID: 6681572987499384054}
   - component: {fileID: 3664183681016681437}
+  - component: {fileID: 5299463059236764009}
   - component: {fileID: 1637398959220885465}
   m_Layer: 3
   m_Name: Player
@@ -273,7 +274,7 @@ MonoBehaviour:
   controller: {fileID: 5780632803445007211}
   timer: {fileID: 0}
   score: {fileID: 0}
-  enemyCollision: {fileID: 0}
+  enemyCollision: {fileID: 5299463059236764009}
   slowDownTime: 0.1
   parrySpeed: {x: 0, y: 20}
   startParryDashTime: 0.3
@@ -283,6 +284,19 @@ MonoBehaviour:
   startParryTime: 0
   midParryTime: 0
   frogo: {fileID: 1637398959220885465}
+--- !u!114 &5299463059236764009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4530205548938474858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afbc071970dbc184aa72437d2abca028, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parry: {fileID: 3664183681016681437}
 --- !u!95 &1637398959220885465
 Animator:
   serializedVersion: 3
