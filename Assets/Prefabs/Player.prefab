@@ -231,11 +231,12 @@ MonoBehaviour:
   m_AirControl: 1
   m_WhatIsGround:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 192
   m_GroundCheck: {fileID: 5305661273901916862}
   m_CeilingCheck: {fileID: 1576615311185870647}
   fallMultiplier: 6
   lowJumpMultiplier: 5.5
+  m_Grounded: 0
   m_FacingRight: 1
   OnLandEvent:
     m_PersistentCalls:
@@ -274,8 +275,8 @@ MonoBehaviour:
   score: {fileID: 0}
   enemyCollision: {fileID: 0}
   slowDownTime: 0.1
-  parrySpeed: {x: 0, y: 30}
-  startParryDashTime: 0.1
+  parrySpeed: {x: 0, y: 20}
+  startParryDashTime: 0.3
   parryDashStop: 2
   isParryMode: 0
   isParryDash: 0

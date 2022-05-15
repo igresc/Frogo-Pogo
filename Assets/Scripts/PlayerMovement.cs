@@ -33,6 +33,15 @@ public class PlayerMovement : MonoBehaviour
 			isJumping = true;
 		}
 
+		if(controller.m_Grounded || parryController.isParryDash)
+		{
+			frogo.SetBool("IsJumping", false);
+		}
+		else
+		{
+			frogo.SetBool("IsJumping", true);
+		}
+
 		horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
 		//Debug.Log(horizontalMove);
 		if(horizontalMove != 0)

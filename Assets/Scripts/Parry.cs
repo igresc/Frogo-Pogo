@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class Parry : MonoBehaviour
@@ -42,13 +43,11 @@ public class Parry : MonoBehaviour
 	{
 		if((isParryMode && Input.GetKeyDown(KeyCode.Space)) || isParryDash)
 		{
-
 			isParryDash = true;
 			ParryAction();
 		}
 		else
 		{
-
 			ParryMode();
 		}
 	}
@@ -127,6 +126,7 @@ public class Parry : MonoBehaviour
 			isParryDash = false;
 			parryDashTime = startParryDashTime;
 			rb.velocity /= new Vector2(1, parryDashStop);
+			//frogo.SetBool("IsParrying", false);
 		}
 		else // Succesfull parry
 		{
@@ -147,7 +147,7 @@ public class Parry : MonoBehaviour
 
 	void SuccessfullParry()
 	{
-		//frogo.SetBool("IsParrying", true);
+		StartCoroutine(ParryAnimation());
 		timer.AddParryTime();
 		score.AddScore();
 		//Debug.Log("aquiii" + enemy.name);
@@ -167,5 +167,12 @@ public class Parry : MonoBehaviour
 	{
 		score.RemoveScore();
 		timer.RemoveParryTime();
+	}
+
+	private IEnumerator ParryAnimation()
+	{
+		frogo.SetBool("IsParrying", true);
+		yield return new WaitForSeconds(0.4f);
+		frogo.SetBool("IsParrying", false);
 	}
 }
