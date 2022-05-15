@@ -5,7 +5,7 @@ using UnityEngine;
 public class WormSpawner : MonoBehaviour
 {
 	[SerializeField]
-	GameObject[] Worm;
+	GameObject Worm;
 
 	//Variables
 	public int maxCount;
@@ -19,24 +19,26 @@ public class WormSpawner : MonoBehaviour
 	{
 		center = new Vector2(transform.position.x, transform.position.y);
 	}
-	void Update()
+	void FixedUpdate()
 	{
 		Spawn();
 	}
 
 	void Spawn()
 	{
-		Vector2 pos = new Vector2(Random.Range(transform.position.x - 2, transform.position.x + 2), transform.position.y);
-		number = Random.Range(0, 2);
-		Debug.Log(number);
-		switch (number)
+		
+		int x = Random.Range(1, maxCount+1);
+
+		if (innerCount >= x)
 		{
-			case 0:
-				Instantiate(Worm[0], pos, Quaternion.identity);
-				break;
-			case 1:
-				Instantiate(Worm[1], pos, Quaternion.identity);
-				break;
+			gameObject.SetActive(false);
+			innerCount = 0;
+		}
+		else
+		{
+			Vector2 pos = new Vector2(Random.Range(transform.position.x - 2, transform.position.x + 2), transform.position.y);
+			Instantiate(Worm, pos, Quaternion.identity);
+			innerCount++;
 		}
 		//Time.timeSinceLevelLoad;
 	}

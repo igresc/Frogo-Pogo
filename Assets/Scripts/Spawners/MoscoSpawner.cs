@@ -5,10 +5,10 @@ using UnityEngine;
 public class MoscoSpawner : MonoBehaviour
 {
 	[SerializeField]
-	GameObject[] Mosco;
+	GameObject Mosco;
 
 	//Variables
-	public int maxCount;
+	public int maxCount = 1;
 	int innerCount;
 	int number;
 
@@ -30,24 +30,14 @@ public class MoscoSpawner : MonoBehaviour
 		Debug.Log("Spawning");
 		if(innerCount >= maxCount)
 		{
-			Destroy(this);
+			gameObject.SetActive(false);
+			innerCount = 0;
 		}
 		else
 		{
 			Vector2 pos = new Vector2(Random.Range(transform.position.x - 2, transform.position.x + 2), Random.Range(transform.position.y - 2, transform.position.y + 2));
-			number = Random.Range(0, 2);
-			Debug.Log(number);
-			switch(number)
-			{
-				case 0:
-					Instantiate(Mosco[0], pos, Quaternion.identity);
-					innerCount++;
-					break;
-				case 1:
-					Instantiate(Mosco[1], pos, Quaternion.identity);
-					innerCount++;
-					break;
-			}
+			Instantiate(Mosco, pos, Quaternion.identity);
+			innerCount++;
 		}
 	}
 
