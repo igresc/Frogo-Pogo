@@ -9,12 +9,12 @@ public class MoscoAI : MonoBehaviour
 	private GameObject player;
 
 	public ParticleSystem deathParticles;
-
+	public AudioSource spawnSound;
 	void Start()
 	{
 		trophy = GameObject.FindGameObjectWithTag("Trophy");
 		player = GameObject.FindGameObjectWithTag("Player");
-
+		spawnSound.Play();
 	}
 
 	void Update()

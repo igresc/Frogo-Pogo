@@ -173,7 +173,7 @@ MonoBehaviour:
   isChasing: 0
   parrySpeed: {x: 0, y: 10}
   deathParticles: {fileID: 3018228628753384751, guid: 6804a6c884266dc4d8c2856bc446d04c, type: 3}
-  spawnSound: {fileID: 0}
+  spawnSound: {fileID: 3429187105334667861}
 --- !u!95 &3979578765876927142
 Animator:
   serializedVersion: 3
