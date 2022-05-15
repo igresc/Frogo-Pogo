@@ -155,14 +155,22 @@ public class Parry : MonoBehaviour
 		timer.AddParryTime();
 		score.AddScore();
 		//Debug.Log("aquiii" + enemy.name);
-		if(enemy.name.Contains("Mosco"))
+		if (enemy != null)
 		{
-			enemy.GetComponent<MoscoAI>().Dead();
-		}
+			if (enemy.name.Contains("Mosco"))
+			{
+				enemy.GetComponent<MoscoAI>().Dead();
+			}
 
-		if(enemy.name.Contains("Worm"))
-		{
-			enemy.GetComponent<WormAI>().Dead();
+			if (enemy.name.Contains("Worm"))
+			{
+				enemy.GetComponent<WormAI>().Dead();
+			}
+
+			if (enemy.name.Contains("Bullet"))
+			{
+				enemy.GetComponent<AguiluchoBullet>().Dead();
+			}
 		}
 
 	}

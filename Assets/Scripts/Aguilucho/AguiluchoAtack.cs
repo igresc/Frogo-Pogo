@@ -6,7 +6,7 @@ public class AguiluchoAtack : MonoBehaviour
 {
 	public Animator animator;
 
-	public float distanceRaycast = 0.5f;
+	public float distanceRaycast = 20f;
 
 	public float cooldownAttack = 1.5f;
 
@@ -33,7 +33,7 @@ public class AguiluchoAtack : MonoBehaviour
 
 	private void FixedUpdate()
 	{
-		RaycastHit2D hit2D = Physics2D.CircleCast(transform.position, 7, Vector2.down, distanceRaycast);
+		RaycastHit2D hit2D = Physics2D.CircleCast(transform.position, distanceRaycast, Vector2.down);
 
 		if(hit2D.collider != null)
 		{
