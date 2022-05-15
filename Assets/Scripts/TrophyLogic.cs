@@ -13,6 +13,7 @@ public class TrophyLogic : MonoBehaviour
 	public const int lottusRemoveScore = 50;
 
 	public ParticleSystem addParticles;
+	public ParticleSystem removeParticles;
 	public Animator scoreAnim;
 
 	float startTimer = 1;
@@ -76,6 +77,8 @@ public class TrophyLogic : MonoBehaviour
 		score -= removeScore;
 		isRemoving = true;
 		scoreText.color = new Color(255, 0, 0, 255);
+		removeParticles.transform.position = transform.position;
+		Instantiate(removeParticles);
 	}
 
 	// Flor collision

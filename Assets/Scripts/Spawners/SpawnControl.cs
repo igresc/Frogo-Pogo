@@ -27,11 +27,11 @@ public class SpawnControl : MonoBehaviour
 	private void spawnActive()
 	{
 		int number = Random.Range(0, Spawners.Length);
-		float cooldown = 7;
+		float cooldown = 4;
 
 		if (time >= 30)
 		{
-			cooldown = 200/time;
+			cooldown = 150/time;
 		}
 
 		
