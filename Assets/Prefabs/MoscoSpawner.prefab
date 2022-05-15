@@ -70,8 +70,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0ee5e8c6bb04f44c87bb617c8d2abef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Mosco:
-  - {fileID: 4320105509962077611, guid: 70e3fa3981d40af4e844c6147ad42137, type: 3}
-  maxCount: 4
+  Mosco: {fileID: 4320105509962077611, guid: 70e3fa3981d40af4e844c6147ad42137, type: 3}
+  maxCount: 2
   center: {x: 0, y: 0}
-  size: {x: 5, y: 5}
+  size: {x: 1, y: 1}

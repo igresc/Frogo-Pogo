@@ -5,29 +5,53 @@ using UnityEngine;
 public class SpawnControl : MonoBehaviour
 {
 	[SerializeField] GameObject[] Spawners;
+	private bool canSpawn;
+	private float time;
+
+	private void Start()
+	{
+		time = 0;
+		canSpawn = true;
+		
+	}
 
 	private void Update()
 	{
-		if(Input.GetKeyDown(KeyCode.T))
-		{
-			int number = Random.Range(0, Spawners.Length);
-			Debug.Log(number);
-			switch(number)
-			{
-				case 0:
-					Spawners[0].SetActive(true);
-					break;
-				case 1:
-					Spawners[1].SetActive(true);
-					break;
-				case 2:
-					Spawners[2].SetActive(true);
-					break;
-				case 3:
-					Spawners[3].SetActive(true);
-					break;
-			}
-		}
+		time += Time.deltaTime;
+		spawnActive();
+		
 	}
 
+	private void spawnActive()
+	{
+		int number = Random.Range(0, Spawners.Length);
+		float cooldown;
+
+		if(time <= 30)
+		{
+			cooldown = 8;
+		}
+		if (time >= 30 && time <= 60)
+		{
+			cooldown = 200/time;
+		}
+		else
+		{
+			cooldown = 3;
+		}
+		
+		if(canSpawn)
+		{
+			StartCoroutine(CooldownSpawns(cooldown));
+			Spawners[number].SetActive(true);
+		}
+			
+	}
+
+	private IEnumerator CooldownSpawns(float time)
+	{
+		canSpawn = false;
+		yield return new WaitForSeconds(time);
+		canSpawn = true;
+	}
 }

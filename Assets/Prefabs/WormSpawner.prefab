@@ -44,11 +44,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 034d7e388cf708e45ae5d112dd833841, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Worm:
-  - {fileID: 7120719460446837962, guid: 9a376bdec0c61f040818e3c9ea0918eb, type: 3}
-  maxCount: 2
+  Worm: {fileID: 7120719460446837962, guid: 9a376bdec0c61f040818e3c9ea0918eb, type: 3}
+  maxCount: 3
   center: {x: 0, y: 0}
-  size: {x: 40, y: 40}
+  size: {x: 1, y: 1}
 --- !u!61 &3156856260142875099
 BoxCollider2D:
   m_ObjectHideFlags: 0
