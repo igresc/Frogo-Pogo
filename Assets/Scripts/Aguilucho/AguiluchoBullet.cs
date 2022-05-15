@@ -30,4 +30,10 @@ public class AguiluchoBullet : MonoBehaviour
 			transform.rotation = Quaternion.Euler(0, 180, 0);
 		}
 	}
+
+	public void Dead()
+	{
+		//Instantiate(deathParticles, transform.position, Quaternion.identity);
+		Destroy(gameObject);
+	}
 }
