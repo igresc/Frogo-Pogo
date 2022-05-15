@@ -104,7 +104,6 @@ GameObject:
   - component: {fileID: 7256345247469845528}
   - component: {fileID: 5133280334122817133}
   - component: {fileID: 3920502023750920030}
-  - component: {fileID: 8011010584251776314}
   - component: {fileID: 8963102751417421406}
   - component: {fileID: 7817474472651213670}
   - component: {fileID: 8986085806531940039}
@@ -206,21 +205,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 30.360523, y: 2.1493788}
   m_EdgeRadius: 0
---- !u!114 &8011010584251776314
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8723915182327105778}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4cee436fc4ea48a4aa249a7f061cd6aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  waitTime: 0
-  moveInput: 0
-  isPlayer: 0
 --- !u!251 &8963102751417421406
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -274,5 +258,5 @@ MonoBehaviour:
   moveSpot:
   - {fileID: 4046944231563469564}
   - {fileID: 2013222970119689403}
-  startWaitTime: 2
-  speed: 1
+  startWaitTime: 1
+  speed: 3

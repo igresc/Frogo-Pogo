@@ -23,6 +23,7 @@ public class AguiluchoAtack : MonoBehaviour
 	public bool isStuned;
 	public float timeStuned;
 	float defaultTimeStun;
+
 	void Start()
 	{
 		actualCooldownAttack = 0;
@@ -34,14 +35,21 @@ public class AguiluchoAtack : MonoBehaviour
 	void Update()
 	{
 		actualCooldownAttack -= Time.deltaTime;
-		if (isStuned)
+
+		if(timeStuned <= 0)
 		{
+			isStuned = false;
+		}
+
+		if(isStuned)
+		{ 
+			beeSkin.color = new Color(255, 0, 124, 255);
 			timeStuned -= Time.deltaTime;
 		}
 		else
 		{
-			isStuned = false;
 			timeStuned = defaultTimeStun;
+			beeSkin.color = defaultBeeSkin;
 		}
 	}
 
@@ -67,9 +75,6 @@ public class AguiluchoAtack : MonoBehaviour
 
 	void launchBullet()
 	{
-		GameObject newBullet;
-
-		newBullet = Instantiate(AguiluchoBullet, transform.position, transform.rotation);
-
+		Instantiate(AguiluchoBullet, transform.position, transform.rotation);
 	}
 }

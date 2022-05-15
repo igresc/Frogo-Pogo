@@ -28,9 +28,6 @@ public class Parry : MonoBehaviour
 
 	public Animator frogo;
 	public AudioSource parrySound;
-	//frogo.SetBool("IsParrying", false); Activar i desactivar la animacio
-	//(ns si hauras de mirar de desactivar la resta d-animacions)
-
 	public ParticleSystem parryParticles;
 
 
@@ -177,6 +174,11 @@ public class Parry : MonoBehaviour
 				aguilucho.Dead();
 				timer.AddTime(aguilucho.addTime);
 				score.AddScore(aguilucho.addScore);
+			}
+			if (enemy.name.Contains("BeeSprite"))
+			{
+				AguiluchoAtack aa = enemy.GetComponent<AguiluchoAtack>();
+				aa.isStuned = true;
 			}
 		}
 

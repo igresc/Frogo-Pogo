@@ -30,29 +30,32 @@ public class AguiluchoAI : MonoBehaviour
 
 	private void Update()
 	{
-		transform.position = Vector2.MoveTowards(transform.position, moveSpot[i].transform.position, speed * Time.deltaTime);
-
-		if(Vector2.Distance(transform.position, moveSpot[i].transform.position) < 0.1f)
+		if(!GetComponent<AguiluchoAtack>().isStuned)
 		{
-			if(waitTime <= 0)
+			transform.position = Vector2.MoveTowards(transform.position, moveSpot[i].transform.position, speed * Time.deltaTime);
+
+			if(Vector2.Distance(transform.position, moveSpot[i].transform.position) < 0.1f)
 			{
-				if(moveSpot[i] != moveSpot[moveSpot.Length - 1])
+				if(waitTime <= 0)
 				{
-					i++;
+					if(moveSpot[i] != moveSpot[moveSpot.Length - 1])
+					{
+						i++;
+					}
+					else
+					{
+						i = 0;
+					}
+
+					waitTime = startWaitTime;
 				}
 				else
 				{
-					i = 0;
+					waitTime -= Time.deltaTime;
 				}
-
-				waitTime = startWaitTime;
 			}
-			else
-			{
-				waitTime -= Time.deltaTime;
-			}
+			Flip();
 		}
-		Flip();
 	}
 	private void Flip()
 	{
