@@ -1484,6 +1484,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Worm (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 7120719460446837962, guid: 9a376bdec0c61f040818e3c9ea0918eb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8690373932392483853, guid: 9a376bdec0c61f040818e3c9ea0918eb, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -2556,6 +2560,7 @@ GameObject:
   - component: {fileID: 1693772594}
   - component: {fileID: 1693772593}
   - component: {fileID: 1693772599}
+  - component: {fileID: 1693772600}
   m_Layer: 5
   m_Name: ------------- Canvas -----------------
   m_TagString: Untagged
@@ -2689,6 +2694,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StartScreen: {fileID: 1708255399}
+--- !u!114 &1693772600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1693772592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a79add95f28c1a44bd7154d6bf48ced, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PauseMenu: {fileID: 2115870075}
+  RestartMenu: {fileID: 1968328055}
+  StartScreen: {fileID: 1708255399}
 --- !u!1 &1708255399
 GameObject:
   m_ObjectHideFlags: 0
@@ -2706,7 +2726,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1708255400
 RectTransform:
   m_ObjectHideFlags: 0
